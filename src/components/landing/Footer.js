@@ -6,17 +6,16 @@ const COLUMNS = [
     title: 'Product',
     links: [
       { label: 'Pricing', href: '#pricing' },
-      { label: 'Features', href: '#features' },
-      { label: 'Supported Devices', href: '#install' },
+      { label: 'Features', href: '#blog' },
       { label: 'How It Works', href: '#install' },
+      { label: 'Reviews', href: '#reviews' },
     ],
   },
   {
     title: 'Company',
     links: [
-      { label: 'About us', href: '#about' },
-      { label: 'Reseller Program', href: '#reseller' },
-      { label: 'Blog', href: '#blog' },
+      { label: 'FAQ', href: '#contact' },
+      { label: 'Reseller Program', href: '#contact' },
       { label: 'Contact us', href: '#contact' },
     ],
   },

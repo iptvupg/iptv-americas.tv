@@ -1,14 +1,14 @@
 import React from 'react';
 import clsx from 'clsx';
-import { IconCheck, IconShield, IconSpark } from './Icons';
+import { IconCheck, IconShield, IconSpark, IconWallet, IconHeadset } from './Icons';
 import { useCheckout } from './CheckoutContext';
 import styles from './Pricing.module.css';
 
 const PLANS = [
   { duration: '1 Month', total: 16, months: 1, popular: false },
   { duration: '3 Months', total: 39, months: 3, popular: false },
-  { duration: '6 Months', total: 60, months: 6, popular: true },
-  { duration: '12 Months', total: 90, was: 192, months: 12, popular: false },
+  { duration: '6 Months', total: 60, months: 6, popular: false },
+  { duration: '12 Months', total: 90, was: 192, months: 12, popular: true },
 ];
 
 const MONTHLY_BASE = 16; // 1-month reference rate
@@ -79,6 +79,14 @@ export default function Pricing() {
               <p className={styles.permonth}>${perMonth(p.total, p.months)} / month</p>
               <p className={styles.billed}>Billed once · No renewal</p>
 
+              <ul className={styles.featureList}>
+                {FEATURES.map((f) => (
+                  <li key={f}>
+                    <IconCheck width={15} height={15} /> {f}
+                  </li>
+                ))}
+              </ul>
+
               <button
                 type="button"
                 className={styles.cta}
@@ -98,25 +106,12 @@ export default function Pricing() {
             <IconSpark width={15} height={15} /> Instant activation by email
           </li>
           <li className={styles.assurance}>
-            <IconCheck width={15} height={15} /> Cancel anytime, no lock-in
+            <IconWallet width={15} height={15} /> Secure, encrypted payment
+          </li>
+          <li className={styles.assurance}>
+            <IconHeadset width={15} height={15} /> 24/7 support included
           </li>
         </ul>
-
-        <div className={styles.included}>
-          <div className={styles.includedHead}>
-            <h3 className={styles.includedTitle}>Every plan includes</h3>
-            <p className={styles.includedSub}>
-              Full access — no tiers, no add-ons, no surprises.
-            </p>
-          </div>
-          <ul className={styles.includedList}>
-            {FEATURES.map((f) => (
-              <li key={f}>
-                <IconCheck width={16} height={16} /> {f}
-              </li>
-            ))}
-          </ul>
-        </div>
 
         <div className={styles.pay}>
           <span className={styles.payLabel}>

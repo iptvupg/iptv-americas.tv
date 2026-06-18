@@ -66,11 +66,11 @@
    * Five planes, each a step toward the light.
    * canvas → base → surface → raised → overlay
    * ─────────────────────────────────────────────── */
-  --vt-bg: #0a0a0b;          /* canvas — the room */
-  --vt-bg-2: #0e0e10;        /* base — section ground */
-  --vt-surface: #141416;     /* surface — cards */
-  --vt-surface-2: #1b1b1e;   /* raised — inputs, chips */
-  --vt-surface-3: #232327;   /* overlay — popovers, hovers */
+  --vt-bg: #05070d;          /* canvas — deep cinematic night */
+  --vt-bg-2: #090b12;        /* base — section ground */
+  --vt-surface: #11131a;     /* surface — cards */
+  --vt-surface-2: #181a22;   /* raised — inputs, chips */
+  --vt-surface-3: #20232c;   /* overlay — popovers, hovers */
 
   /* ───────────────────────────────────────────────
    * 3 · TEXT SYSTEM
@@ -94,6 +94,19 @@
   /* Accent surfaces — used sparingly for active/selected */
   --vt-accent-soft: rgba(139, 92, 246, 0.1);
   --vt-accent-border: rgba(139, 92, 246, 0.34);
+
+  /* ───────────────────────────────────────────────
+   * 4b · GLASS SYSTEM
+   * Translucent frosted surfaces. Used ONLY on a few key
+   * planes (navbar, pricing, stats, features, FAQ) — never
+   * everywhere. Always paired with an opaque @supports fallback.
+   * ─────────────────────────────────────────────── */
+  --vt-glass: rgba(255, 255, 255, 0.055);
+  --vt-glass-strong: rgba(255, 255, 255, 0.09);
+  --vt-glass-border: rgba(255, 255, 255, 0.1);
+  --vt-glass-highlight: rgba(255, 255, 255, 0.14);
+  --vt-glass-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+  --vt-glass-blur: blur(24px) saturate(135%);
 
   /* ───────────────────────────────────────────────
    * 5 · ELEVATION SYSTEM
@@ -185,15 +198,18 @@
   /* Type scale — exact, discrete steps. No value lives off this ladder.
    * Display XL 72 · L 64 · M 56 · H1 48 · H2 40 · H3 32 · H4 24 · H5 20
    * Body L 18 · Body 16 · Small 14 · (Caption 12, sub-scale utility) */
-  --vt-fs-display-xl: 72px;
-  --vt-fs-display-l: 64px;
-  --vt-fs-display-m: 56px;
-  --vt-fs-h1: 48px;
-  --vt-fs-h2: 40px;
-  --vt-fs-h3: 32px;
-  --vt-fs-h4: 24px;
+  /* Fluid type — one continuous ramp from 320px to ~1280px via clamp().
+   * Each max equals the original desktop step, so large screens are
+   * unchanged; the min keeps mobile comfortable (H1 never oversized). */
+  --vt-fs-display-xl: clamp(2.25rem, 1.43rem + 4.10vw, 4.5rem);  /* 36 → 72 */
+  --vt-fs-display-l:  clamp(2rem, 1.27rem + 3.64vw, 4rem);       /* 32 → 64 */
+  --vt-fs-display-m:  clamp(1.875rem, 1.28rem + 2.95vw, 3.5rem); /* 30 → 56 */
+  --vt-fs-h1: clamp(1.75rem, 1.29rem + 2.27vw, 3rem);            /* 28 → 48 */
+  --vt-fs-h2: clamp(1.5rem, 1.14rem + 1.82vw, 2.5rem);           /* 24 → 40 */
+  --vt-fs-h3: clamp(1.375rem, 1.15rem + 1.14vw, 2rem);           /* 22 → 32 */
+  --vt-fs-h4: clamp(1.25rem, 1.16rem + 0.45vw, 1.5rem);          /* 20 → 24 */
   --vt-fs-h5: 20px;
-  --vt-fs-body-lg: 18px;
+  --vt-fs-body-lg: clamp(1rem, 0.95rem + 0.23vw, 1.125rem);      /* 16 → 18 */
   --vt-fs-body: 16px;
   --vt-fs-sm: 14px;
   --vt-fs-xs: 12px;
@@ -225,10 +241,11 @@
   --vt-container: 1280px;
   --vt-container-narrow: 768px;
   --vt-gutter: var(--vt-space-6);          /* 24 */
-  /* Section rhythm — Small 64 · Normal 96 · Large 128 */
-  --vt-section-sm: var(--vt-space-16);     /* 64 */
-  --vt-section-y: var(--vt-space-24);      /* 96 — default */
-  --vt-section-lg: var(--vt-space-32);     /* 128 */
+  /* Section rhythm — fluid, scales smoothly with the viewport.
+   * Small 48→64 · Normal 64→96 · Large 80→128 */
+  --vt-section-sm: clamp(48px, 5vw, 64px);
+  --vt-section-y: clamp(64px, 8vw, 96px);
+  --vt-section-lg: clamp(80px, 10vw, 128px);
   --vt-grid-gap: var(--vt-space-6);        /* 24 */
 
   /* ───────────────────────────────────────────────
@@ -264,7 +281,7 @@
   --ifm-color-primary-light: #a78bfa;
   --ifm-color-primary-lighter: #b99bfb;
   --ifm-color-primary-lightest: #c4b5fd;
-  --ifm-background-color: #0a0a0b;
+  --ifm-background-color: #05070d;
   --ifm-font-family-base: var(--vt-font);
   --ifm-font-family-heading: var(--vt-font);
   --ifm-heading-font-weight: 700;
@@ -275,28 +292,19 @@
 
 [data-theme='dark'] {
   --ifm-color-primary: #8b5cf6;
-  --ifm-background-color: #0a0a0b;
+  --ifm-background-color: #05070d;
 }
 
-/* Responsive type & rhythm — every step stays ON the scale.
- * Large display/headings drop down the ladder on smaller viewports. */
-@media (max-width: 1024px) {
-  :root {
-    --vt-fs-display-xl: 56px; /* 72 → 56 (display M) */
-    --vt-fs-display-l: 48px;  /* 64 → 48 (H1) */
-    --vt-fs-h1: 40px;         /* 48 → 40 (H2) */
-    --vt-section-y: 64px;     /* 96 → 64 */
-    --vt-section-lg: 96px;    /* 128 → 96 */
-  }
-}
+/* Type & rhythm now scale fluidly via clamp() on the tokens above —
+ * no stepped breakpoints needed. Below 640px we only lighten the glass
+ * blur for performance on mobile / low-end GPUs. */
 @media (max-width: 640px) {
   :root {
-    --vt-fs-display-xl: 40px; /* → H2 */
-    --vt-fs-display-l: 40px;  /* → H2 */
-    --vt-fs-display-m: 40px;  /* → H2 */
-    --vt-fs-h1: 32px;         /* → H3 */
-    --vt-fs-h2: 32px;         /* → H3 */
-    --vt-fs-h3: 24px;         /* → H4 */
+    /* Cheaper frosted glass on small screens — smaller blur radius and a
+     * touch more surface opacity keep text crisp while easing the GPU. */
+    --vt-glass: rgba(255, 255, 255, 0.075);
+    --vt-glass-strong: rgba(255, 255, 255, 0.11);
+    --vt-glass-blur: blur(12px) saturate(120%);
   }
 }
 
@@ -430,6 +438,12 @@ body:has(.landing-main) {
 
 .vt-btn-sm { padding: var(--vt-space-2) var(--vt-space-4); font-size: var(--vt-fs-sm); }
 .vt-btn-lg { padding: var(--vt-space-4) var(--vt-space-8); font-size: var(--vt-fs-body); }
+
+/* Touch ergonomics — guarantee a comfortable 44px hit area on touch
+ * devices without inflating buttons on precise (mouse) pointers. */
+@media (pointer: coarse) {
+  .vt-btn { min-height: 44px; }
+}
 
 .vt-btn-primary {
   background: var(--vt-n-0);

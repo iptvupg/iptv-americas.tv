@@ -47,7 +47,7 @@ function Stars({ rating }) {
 
 export default function Testimonials() {
   return (
-    <section className={styles.section} aria-label="Customer reviews">
+    <section id="reviews" className={styles.section} aria-label="Customer reviews">
       <div className={`vt-container ${styles.inner}`}>
         <header className={styles.head} data-reveal>
           <span className="vt-eyebrow">Reviews</span>

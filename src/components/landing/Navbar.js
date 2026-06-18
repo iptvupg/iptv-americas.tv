@@ -7,11 +7,10 @@ import styles from './Navbar.module.css';
 const LINKS = [
   { label: 'Home', href: '#home' },
   { label: 'Pricing', href: '#pricing' },
-  { label: 'About us', href: '#about' },
-  { label: 'Blog', href: '#blog' },
-  { label: 'Installation Guide', href: '#install' },
-  { label: 'Reseller', href: '#reseller' },
-  { label: 'Contact us', href: '#contact' },
+  { label: 'Features', href: '#blog' },
+  { label: 'How It Works', href: '#install' },
+  { label: 'Reviews', href: '#reviews' },
+  { label: 'FAQ', href: '#contact' },
 ];
 
 function Logo() {

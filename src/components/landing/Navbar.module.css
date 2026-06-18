@@ -8,17 +8,16 @@
 }
 
 .headerScrolled {
-  /* Near-solid neutral bar — guaranteed legible over any content, no reliance on blur */
-  background: rgba(12, 12, 14, 0.98);
-  border-bottom-color: var(--vt-border);
+  /* Opaque fallback — guaranteed legible if backdrop blur is unsupported */
+  background: rgba(8, 10, 16, 0.96);
+  border-bottom-color: var(--vt-glass-border);
   box-shadow: var(--vt-shadow-sm);
 }
 @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .headerScrolled {
-    /* Whisper of translucency + blur as polish; opacity high enough to stay clean if blur is weak */
-    background: rgba(12, 12, 14, 0.96);
-    backdrop-filter: blur(18px) saturate(150%);
-    -webkit-backdrop-filter: blur(18px) saturate(150%);
+    /* Frosted glass bar — translucent enough to read as glass, blur keeps text crisp */
+    background: rgba(8, 10, 16, 0.62);
+    backdrop-filter: var(--vt-glass-blur);
   }
 }
 
@@ -93,6 +92,8 @@
 .renew {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-height: 40px;
   padding: var(--vt-space-2) var(--vt-space-6);
   border: none;
   border-radius: var(--vt-r-pill);
@@ -123,6 +124,21 @@
   border: 1px solid var(--vt-border);
   color: var(--vt-text);
   cursor: pointer;
+}
+
+/* Comfortable hit areas on touch devices */
+@media (pointer: coarse) {
+  .renew,
+  .burger {
+    min-height: 44px;
+  }
+  .burger {
+    width: 44px;
+    height: 44px;
+  }
+  .mobilePanel a {
+    padding: var(--vt-space-3);
+  }
 }
 
 .mobilePanel {
@@ -189,5 +205,14 @@
   }
   .renew {
     padding: var(--vt-space-2) var(--vt-space-4);
+  }
+}
+
+/* Very small phones: the logo + inline CTA + burger no longer fit on one
+   row. Drop the header's duplicate CTA — the always-visible sticky buy-bar
+   and the in-menu button keep the primary action one tap away. */
+@media (max-width: 400px) {
+  .renew {
+    display: none;
   }
 }

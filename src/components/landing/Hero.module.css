@@ -68,16 +68,40 @@
   text-wrap: pretty;
 }
 
+.offer {
+  margin: var(--vt-space-6) 0 0;
+  font-size: var(--vt-fs-sm);
+  color: var(--vt-text-muted);
+}
+.offer strong {
+  color: var(--vt-text);
+  font-weight: var(--vt-fw-bold);
+  font-variant-numeric: tabular-nums;
+}
+
 .ctas {
   display: flex;
   flex-wrap: wrap;
   gap: var(--vt-space-3);
   justify-content: center;
-  margin-top: var(--vt-space-8);
+  margin-top: var(--vt-space-6);
 }
 .ctas :global(.vt-btn) {
   padding: var(--vt-space-4) var(--vt-space-6);
   font-size: var(--vt-fs-body);
+}
+
+/* Small phones: stack the two CTAs full-width so each is an easy,
+   unambiguous tap target instead of two cramped pills side by side. */
+@media (max-width: 420px) {
+  .ctas {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  .ctas :global(.vt-btn) {
+    width: 100%;
+  }
 }
 
 /* Trust strip */
@@ -153,5 +177,46 @@
   }
   .brandsWrap {
     margin-top: var(--vt-space-12);
+  }
+}
+
+/* Small phones: a wrapping logo cloud looks accidental. Make it a single
+   horizontal strip that scrolls, with edge fades hinting there's more —
+   reads as a deliberate "works with" rail rather than leftover logos. */
+@media (max-width: 640px) {
+  .brands {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: var(--vt-space-8);
+    width: 100%;
+    margin-inline: calc(-1 * var(--vt-gutter));
+    padding-inline: var(--vt-gutter);
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 var(--vt-gutter),
+      #000 calc(100% - var(--vt-gutter)),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 var(--vt-gutter),
+      #000 calc(100% - var(--vt-gutter)),
+      transparent 100%
+    );
+  }
+  .brands::-webkit-scrollbar {
+    display: none;
+  }
+  .brand {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    /* Logos read clearly without hover on touch. */
+    opacity: 0.7;
   }
 }

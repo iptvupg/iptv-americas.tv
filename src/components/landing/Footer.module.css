@@ -126,3 +126,11 @@
     text-align: center;
   }
 }
+
+/* Clear the fixed mobile buy-bar (StickyCta) so the footer's final row
+   is never hidden behind it. Matches the bar's height + safe area. */
+@media (max-width: 768px) {
+  .bottom {
+    padding-bottom: calc(var(--vt-space-16) + env(safe-area-inset-bottom, 0px));
+  }
+}

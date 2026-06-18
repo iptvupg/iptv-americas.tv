@@ -1,0 +1,71 @@
+.section {
+  padding: var(--vt-section-lg) 0;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 720px;
+}
+
+.title {
+  margin: 0;
+  font-size: var(--vt-fs-h2);
+  font-weight: var(--vt-fw-bold);
+  line-height: var(--vt-leading-snug);
+  letter-spacing: var(--vt-tracking-snug);
+  color: var(--vt-text);
+  text-wrap: balance;
+}
+
+.sub {
+  margin: var(--vt-space-4) 0 0;
+  font-size: var(--vt-fs-lead);
+  line-height: var(--vt-leading-normal);
+  color: var(--vt-text-muted);
+  text-wrap: pretty;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--vt-space-3);
+  margin-top: var(--vt-space-8);
+}
+
+/* Small phones: stack CTAs full-width for clear, easy taps. */
+@media (max-width: 420px) {
+  .ctas {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  .ctas :global(.vt-btn) {
+    width: 100%;
+  }
+}
+
+.points {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vt-space-2) var(--vt-space-6);
+  margin: var(--vt-space-6) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.points li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--vt-space-2);
+  font-size: var(--vt-fs-sm);
+  color: var(--vt-text-muted);
+}
+.points svg {
+  flex: none;
+  color: var(--vt-purple-300);
+}

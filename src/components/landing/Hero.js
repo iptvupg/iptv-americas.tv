@@ -1,5 +1,6 @@
 import React from 'react';
 import { IconArrow, IconStar, IconShield, IconUptime } from './Icons';
+import { useCheckout } from './CheckoutContext';
 import styles from './Hero.module.css';
 
 const BRANDS = [
@@ -20,31 +21,37 @@ const TRUST = [
 ];
 
 export default function Hero() {
+  const { open } = useCheckout();
   return (
     <section id="home" className={styles.hero}>
       <div className={styles.grid} aria-hidden="true" />
       <div className={styles.spotlight} aria-hidden="true" />
 
       <div className={`vt-container ${styles.inner}`}>
-        <span className="vt-eyebrow">Welcome to IPTV Americas</span>
+        <span className="vt-eyebrow">Premium IPTV · 30,000+ channels</span>
 
         <h1 className={styles.title}>
-          Experience lightning-fast
+          Every channel, every match,
           <br />
-          <span className={styles.accent}>IPTV streaming</span>
+          <span className={styles.accent}>every movie — in 4K</span>
         </h1>
 
         <p className={styles.sub}>
-          Unlimited streaming in stunning quality, anytime and anywhere. Access thousands
-          of channels, movies, and shows with zero interruptions.
+          30,000+ live TV channels and 150,000+ movies &amp; series, streaming on every
+          device you own — Smart TV, Firestick, phone, tablet and PC. Instant setup,
+          no contract.
+        </p>
+
+        <p className={styles.offer}>
+          Plans from <strong>$7.50/mo</strong> · billed once, no auto-renewal
         </p>
 
         <div className={styles.ctas}>
-          <a className="vt-btn vt-btn-primary" href="#pricing">
-            View Plans <IconArrow width={17} height={17} />
-          </a>
-          <a className="vt-btn vt-btn-ghost" href="#install">
-            How It Works
+          <button type="button" className="vt-btn vt-btn-primary" onClick={() => open()}>
+            Get Started <IconArrow width={17} height={17} />
+          </button>
+          <a className="vt-btn vt-btn-ghost" href="#pricing">
+            View Plans
           </a>
         </div>
 

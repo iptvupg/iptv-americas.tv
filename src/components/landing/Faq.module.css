@@ -1,5 +1,5 @@
 .section {
-  padding: 0 0 var(--vt-section-y);
+  padding: 0 0 var(--vt-section-sm);
 }
 
 .head {
@@ -8,7 +8,11 @@
   align-items: center;
   gap: var(--vt-space-3);
   text-align: center;
-  margin-bottom: var(--vt-space-12);
+  margin-bottom: var(--vt-space-8);
+}
+/* Utility section — lowest intensity on the page; quietest head. */
+.head :global(.vt-section-title) {
+  font-size: var(--vt-fs-h4);
 }
 
 .list {
@@ -20,15 +24,27 @@
 }
 
 .item {
-  border-radius: var(--vt-r-md);
+  border-radius: var(--vt-r-lg);
+  /* Opaque fallback for browsers without backdrop-filter */
   background: var(--vt-surface);
-  border: 1px solid var(--vt-border);
+  border: 1px solid var(--vt-glass-border);
   overflow: hidden;
-  transition: border-color var(--vt-base);
+  transition: border-color var(--vt-base), background var(--vt-base);
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .item {
+    background: var(--vt-glass);
+    backdrop-filter: var(--vt-glass-blur);
+  }
 }
 .itemOpen {
-  border-color: var(--vt-border-strong);
+  border-color: var(--vt-accent-border);
   background: linear-gradient(180deg, var(--vt-surface-2), var(--vt-surface));
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .itemOpen {
+    background: var(--vt-glass-strong);
+  }
 }
 
 .trigger {

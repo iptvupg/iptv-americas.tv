@@ -129,20 +129,44 @@
   color: var(--vt-a-300);
 }
 
+/* Mobile: swap the fixed grid for a horizontal scroll-snap rail so every
+   title stays browsable with a thumb-swipe — nothing is hidden. The rail
+   bleeds to the screen edges (negative margin + matching padding) so the
+   last poster peeks in, signalling "more to scroll". */
 @media (max-width: 768px) {
   .row {
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    gap: var(--vt-space-3);
+    margin-inline: calc(-1 * var(--vt-gutter));
+    padding-inline: var(--vt-gutter);
+    padding-bottom: var(--vt-space-2);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
-  .poster:nth-child(4),
-  .poster:nth-child(5) {
+  .row::-webkit-scrollbar {
     display: none;
+  }
+  .poster {
+    flex: 0 0 42%;
+    scroll-snap-align: start;
+  }
+  /* No hover lift on touch — it sticks awkwardly after a tap. */
+  .poster:hover {
+    transform: none;
+  }
+  .poster:hover .img {
+    transform: none;
   }
 }
 @media (max-width: 480px) {
-  .row {
-    grid-template-columns: repeat(2, 1fr);
+  .poster {
+    flex-basis: 58%;
   }
-  .poster:nth-child(3) {
-    display: none;
+}
+@media (max-width: 360px) {
+  .poster {
+    flex-basis: 68%;
   }
 }

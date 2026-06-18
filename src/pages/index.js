@@ -5,7 +5,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Navbar from '@site/src/components/landing/Navbar';
 import Hero from '@site/src/components/landing/Hero';
 import Showcase from '@site/src/components/landing/Showcase';
-import Benefits from '@site/src/components/landing/Benefits';
 import HowItWorks from '@site/src/components/landing/HowItWorks';
 import Devices from '@site/src/components/landing/Devices';
 import Pricing from '@site/src/components/landing/Pricing';
@@ -13,11 +12,12 @@ import Stats from '@site/src/components/landing/Stats';
 import Features from '@site/src/components/landing/Features';
 import Testimonials from '@site/src/components/landing/Testimonials';
 import Faq from '@site/src/components/landing/Faq';
-import Reseller from '@site/src/components/landing/Reseller';
+import FinalCta from '@site/src/components/landing/FinalCta';
 import Footer from '@site/src/components/landing/Footer';
 import Reveal from '@site/src/components/landing/Reveal';
 import { CheckoutProvider } from '@site/src/components/landing/CheckoutContext';
 import CheckoutModal from '@site/src/components/landing/CheckoutModal';
+import StickyCta from '@site/src/components/landing/StickyCta';
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -33,19 +33,19 @@ export default function Home() {
         <Reveal />
         <main>
           <Hero />
-          <Showcase />
-          <Benefits />
-          <HowItWorks />
-          <Devices />
-          <Stats />
           <Pricing />
+          <Stats />
+          <Devices />
+          <Showcase />
           <Features />
+          <HowItWorks />
           <Testimonials />
           <Faq />
-          <Reseller />
+          <FinalCta />
         </main>
         <Footer />
         <CheckoutModal />
+        <StickyCta />
       </CheckoutProvider>
     </Layout>
   );

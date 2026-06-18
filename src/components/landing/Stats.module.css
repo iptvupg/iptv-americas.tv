@@ -8,11 +8,20 @@
   gap: var(--vt-space-6);
   padding: var(--vt-space-12) var(--vt-space-8);
   border-radius: var(--vt-r-xl);
+  /* Opaque fallback for browsers without backdrop-filter */
   background:
-    radial-gradient(80% 120% at 50% 0%, rgba(124, 58, 237, 0.07), transparent 72%),
+    radial-gradient(80% 120% at 50% 0%, rgba(124, 58, 237, 0.08), transparent 72%),
     var(--vt-surface);
-  border: 1px solid var(--vt-border);
-  box-shadow: var(--vt-shadow-lg);
+  border: 1px solid var(--vt-glass-border);
+  box-shadow: var(--vt-glass-shadow), inset 0 1px 0 var(--vt-glass-highlight);
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .bar {
+    background:
+      radial-gradient(80% 120% at 50% 0%, rgba(124, 58, 237, 0.1), transparent 72%),
+      var(--vt-glass);
+    backdrop-filter: var(--vt-glass-blur);
+  }
 }
 
 .item {
@@ -27,7 +36,7 @@
 }
 
 .value {
-  font-size: clamp(30px, 4vw, 44px);
+  font-size: clamp(26px, 5.4vw, 52px);
   font-weight: 700;
   letter-spacing: -0.03em;
   font-variant-numeric: tabular-nums;
@@ -45,5 +54,11 @@
   }
   .item:nth-child(2) {
     border-right: none;
+  }
+}
+@media (max-width: 480px) {
+  .bar {
+    gap: var(--vt-space-6) var(--vt-space-4);
+    padding: var(--vt-space-8) var(--vt-space-6);
   }
 }
