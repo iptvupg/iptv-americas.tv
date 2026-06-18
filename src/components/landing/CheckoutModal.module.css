@@ -1,0 +1,278 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--vt-space-12) var(--vt-space-4);
+  overflow-y: auto;
+  background: rgba(8, 8, 10, 0.72);
+  animation: overlayIn var(--vt-base) var(--vt-ease) both;
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .overlay {
+    background: rgba(8, 8, 10, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.dialog {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  margin: auto;
+  padding: var(--vt-space-8);
+  border-radius: var(--vt-r-xl);
+  background: var(--vt-surface);
+  border: 1px solid var(--vt-border-2);
+  box-shadow: var(--vt-e5);
+  animation: dialogIn var(--vt-slow) var(--vt-ease) both;
+}
+@keyframes dialogIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Header */
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--vt-space-4);
+  margin-bottom: var(--vt-space-6);
+}
+.title {
+  margin: 0;
+  font-size: var(--vt-fs-h4);
+  font-weight: var(--vt-fw-bold);
+  letter-spacing: var(--vt-tracking-snug);
+  color: var(--vt-text);
+}
+.summary {
+  margin: var(--vt-space-2) 0 0;
+  font-size: var(--vt-fs-sm);
+  color: var(--vt-text-muted);
+}
+.summaryDim {
+  color: var(--vt-text-dim);
+}
+.summaryPrice {
+  color: var(--vt-text);
+  font-weight: var(--vt-fw-semibold);
+  font-variant-numeric: tabular-nums;
+}
+.dot {
+  margin: 0 var(--vt-space-2);
+  color: var(--vt-text-faint);
+}
+.close {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--vt-control-xs);
+  height: var(--vt-control-xs);
+  border-radius: var(--vt-r-sm);
+  background: var(--vt-surface-2);
+  border: 1px solid var(--vt-border);
+  color: var(--vt-text-muted);
+  cursor: pointer;
+  transition: background var(--vt-fast), color var(--vt-fast), border-color var(--vt-fast);
+}
+.close:hover {
+  background: var(--vt-surface-3);
+  border-color: var(--vt-border-strong);
+  color: var(--vt-text);
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vt-space-4);
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vt-space-2);
+}
+.label {
+  font-size: var(--vt-fs-xs);
+  font-weight: var(--vt-fw-semibold);
+  letter-spacing: var(--vt-tracking-wide);
+  text-transform: uppercase;
+  color: var(--vt-text-dim);
+}
+.input {
+  width: 100%;
+  padding: var(--vt-space-3) var(--vt-space-4);
+  font-size: var(--vt-fs-body);
+  font-family: inherit;
+  color: var(--vt-text);
+  background: var(--vt-surface-2);
+  border: 1px solid var(--vt-border);
+  border-radius: var(--vt-r-md);
+  transition: border-color var(--vt-fast), box-shadow var(--vt-fast);
+}
+.input::placeholder {
+  color: var(--vt-text-faint);
+}
+.input:focus {
+  outline: none;
+  border-color: var(--vt-accent-border);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.16);
+}
+.inputError {
+  border-color: rgba(248, 113, 113, 0.5);
+}
+
+/* Payment method */
+.payset {
+  margin: var(--vt-space-2) 0 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--vt-space-3);
+}
+.payList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vt-space-3);
+}
+.payOption {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--vt-space-3);
+  padding: var(--vt-space-3) var(--vt-space-4);
+  border-radius: var(--vt-r-md);
+  background: var(--vt-surface-2);
+  border: 1px solid var(--vt-border);
+  cursor: pointer;
+  transition: border-color var(--vt-fast), background var(--vt-fast);
+}
+.payOption:hover {
+  border-color: var(--vt-border-strong);
+}
+.payOptionActive,
+.payOptionActive:hover {
+  border-color: var(--vt-accent-border);
+  background: var(--vt-accent-soft);
+}
+.radioInput {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.radio {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--vt-border-strong);
+  transition: border-color var(--vt-fast);
+}
+.payOptionActive .radio {
+  border-color: var(--vt-a-400);
+  background:
+    radial-gradient(circle at center, var(--vt-a-400) 0 5px, transparent 6px);
+}
+.radioInput:focus-visible + .radio {
+  outline: 2px solid var(--vt-a-400);
+  outline-offset: 2px;
+}
+.payLogos {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--vt-space-2);
+}
+.payLogo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 26px;
+  padding: 0 var(--vt-space-1);
+  border-radius: 6px;
+  background: #fff;
+}
+.payLogo img {
+  display: block;
+  max-width: 100%;
+  max-height: 16px;
+  width: auto;
+  object-fit: contain;
+}
+.payName {
+  font-size: var(--vt-fs-body);
+  font-weight: var(--vt-fw-semibold);
+  color: var(--vt-text);
+}
+
+.errorText {
+  font-size: var(--vt-fs-xs);
+  color: var(--vt-danger);
+}
+
+/* Submit */
+.submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vt-space-2);
+  margin-top: var(--vt-space-2);
+  padding: var(--vt-space-4);
+  font-size: var(--vt-fs-body);
+  font-weight: var(--vt-fw-bold);
+  font-family: inherit;
+  color: #fff;
+  background: var(--vt-a-600);
+  border: 1px solid transparent;
+  border-radius: var(--vt-r-pill);
+  cursor: pointer;
+  transition: transform var(--vt-fast), background var(--vt-fast), box-shadow var(--vt-base);
+}
+.submit:hover {
+  background: var(--vt-a-500);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px -12px rgba(124, 58, 237, 0.5);
+}
+.submit:active {
+  transform: translateY(0);
+}
+.submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vt-space-2);
+  margin: var(--vt-space-1) 0 0;
+  font-size: var(--vt-fs-xs);
+  color: var(--vt-text-dim);
+}
+.note svg {
+  flex: none;
+  color: #6ee7b7;
+}
+
+@media (max-width: 480px) {
+  .overlay {
+    padding: var(--vt-space-4);
+  }
+  .dialog {
+    padding: var(--vt-space-6);
+  }
+}

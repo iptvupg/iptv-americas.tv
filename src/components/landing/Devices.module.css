@@ -1,0 +1,124 @@
+.section {
+  position: relative;
+  padding: var(--vt-space-12) 0 var(--vt-section-y);
+  isolation: isolate;
+}
+
+.glow {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 520px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(124, 58, 237, 0.06), transparent 64%);
+  z-index: -1;
+}
+
+/* Infinite marquee viewport with progressively faded edges (mask-based,
+ * since the renderer does not paint backdrop-filter blur). */
+.marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 12%,
+    #000 88%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 12%,
+    #000 88%,
+    transparent 100%
+  );
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  align-items: flex-start;
+  gap: var(--vt-space-16);
+  padding-block: var(--vt-space-2);
+  animation: vt-device-marquee 32s linear infinite;
+}
+.marquee:hover .track {
+  animation-play-state: paused;
+}
+
+@keyframes vt-device-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Two identical sets + the gap between them = exactly 50% + one gap */
+    transform: translateX(calc(-50% - 28px));
+  }
+}
+
+.device {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--vt-space-3);
+  color: var(--vt-text-muted);
+  transition: color var(--vt-fast);
+}
+.device:hover {
+  color: var(--vt-text);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--vt-control-xl);
+  height: var(--vt-control-xl);
+  border-radius: var(--vt-r-md);
+  background: var(--vt-surface);
+  border: 1px solid var(--vt-border);
+  color: var(--vt-text-muted);
+  transition: color var(--vt-base), border-color var(--vt-base),
+    background var(--vt-base), transform var(--vt-base) var(--vt-ease);
+}
+.device:hover .icon {
+  color: var(--vt-purple-300);
+  border-color: var(--vt-accent-border);
+  background: var(--vt-accent-soft);
+  transform: translateY(-4px);
+}
+
+.svg {
+  width: var(--vt-icon-lg);
+  height: var(--vt-icon-lg);
+}
+
+.name {
+  font-size: var(--vt-fs-sm);
+  font-weight: 500;
+}
+
+@media (max-width: 540px) {
+  .track {
+    gap: var(--vt-space-12);
+    animation-duration: 24s;
+  }
+  @keyframes vt-device-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - 20px));
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}

@@ -1,0 +1,312 @@
+.section {
+  padding: var(--vt-section-y) 0;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--vt-space-4);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--vt-space-6);
+  margin-top: var(--vt-space-12);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--vt-space-8) var(--vt-space-6);
+  border-radius: var(--vt-r-lg);
+  background: linear-gradient(180deg, var(--vt-surface) 0%, var(--vt-bg-2) 100%);
+  border: 1px solid var(--vt-border);
+  transition: transform var(--vt-base) var(--vt-ease), border-color var(--vt-base), box-shadow var(--vt-base);
+}
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--vt-border-strong);
+  box-shadow: var(--vt-shadow-card);
+}
+.cardPopular {
+  border-color: var(--vt-border-strong);
+  background:
+    radial-gradient(80% 50% at 50% 0%, rgba(124, 58, 237, 0.08), transparent 64%),
+    linear-gradient(180deg, var(--vt-surface-2) 0%, var(--vt-bg-2) 100%);
+  box-shadow: var(--vt-shadow-lg), var(--vt-shadow-accent);
+  transform: scale(1.035);
+  z-index: 2;
+}
+.cardPopular:hover {
+  transform: scale(1.035) translateY(-8px);
+}
+
+.ribbon {
+  position: absolute;
+  top: calc(-1 * var(--vt-space-3));
+  left: 50%;
+  transform: translateX(-50%);
+  padding: var(--vt-space-1) var(--vt-space-4);
+  border-radius: var(--vt-r-pill);
+  background: var(--vt-grad-accent);
+  color: #fff;
+  font-size: var(--vt-fs-xs);
+  font-weight: var(--vt-fw-semibold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: var(--vt-shadow-btn);
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--vt-space-3);
+  margin-bottom: var(--vt-space-4);
+}
+.duration {
+  margin: 0;
+  font-size: var(--vt-fs-body);
+  font-weight: var(--vt-fw-bold);
+  letter-spacing: 0.04em;
+  color: var(--vt-text);
+}
+.save {
+  flex: none;
+  padding: var(--vt-space-1) var(--vt-space-2);
+  border-radius: var(--vt-r-pill);
+  font-size: var(--vt-fs-xs);
+  font-weight: var(--vt-fw-bold);
+  letter-spacing: 0.02em;
+  color: #6ee7b7;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.28);
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--vt-space-1);
+  margin-bottom: var(--vt-space-2);
+}
+.was {
+  align-self: center;
+  margin-right: var(--vt-space-1);
+  font-size: var(--vt-fs-h5);
+  font-weight: var(--vt-fw-semibold);
+  color: var(--vt-text-dim);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+.currency {
+  font-size: var(--vt-fs-h5);
+  font-weight: var(--vt-fw-bold);
+  color: var(--vt-purple-300);
+}
+.price {
+  font-size: var(--vt-fs-h2);
+  font-weight: var(--vt-fw-bold);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+.per {
+  font-size: var(--vt-fs-sm);
+  color: var(--vt-text-dim);
+}
+
+.permonth {
+  margin: 0 0 var(--vt-space-1);
+  font-size: var(--vt-fs-sm);
+  font-weight: var(--vt-fw-semibold);
+  color: var(--vt-text);
+  font-variant-numeric: tabular-nums;
+}
+.billed {
+  margin: 0 0 var(--vt-space-6);
+  font-size: var(--vt-fs-xs);
+  line-height: 1.5;
+  color: var(--vt-text-muted);
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: auto;
+  padding: var(--vt-space-3) var(--vt-space-4);
+  border-radius: var(--vt-r-pill);
+  background: var(--vt-surface-3);
+  border: 1px solid var(--vt-border-strong);
+  color: var(--vt-text);
+  font-family: inherit;
+  font-weight: var(--vt-fw-bold);
+  font-size: var(--vt-fs-sm);
+  text-decoration: none;
+  cursor: pointer;
+  appearance: none;
+  transition: background var(--vt-fast), transform var(--vt-fast);
+}
+.cta:hover {
+  background: var(--vt-grad-purple);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.cardPopular .cta {
+  background: var(--vt-grad-purple);
+  color: #fff;
+  border-color: transparent;
+}
+
+/* Shared trust strip — one line for all plans, not repeated per card */
+.assurances {
+  list-style: none;
+  margin: var(--vt-space-8) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vt-space-4) var(--vt-space-8);
+}
+.assurance {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--vt-space-2);
+  font-size: var(--vt-fs-sm);
+  color: var(--vt-text-muted);
+}
+.assurance svg {
+  flex: none;
+  color: var(--vt-purple-300);
+}
+.assuranceGuard svg {
+  color: #6ee7b7;
+}
+
+/* "Every plan includes" — the feature list, stated once and generously */
+.included {
+  margin-top: var(--vt-space-12);
+  padding: var(--vt-space-8);
+  border-radius: var(--vt-r-lg);
+  background: var(--vt-surface);
+  border: 1px solid var(--vt-border);
+  box-shadow: var(--vt-e2);
+}
+.includedHead {
+  text-align: center;
+  margin-bottom: var(--vt-space-6);
+}
+.includedTitle {
+  margin: 0;
+  font-size: var(--vt-fs-h4);
+  font-weight: var(--vt-fw-bold);
+  letter-spacing: var(--vt-tracking-snug);
+  color: var(--vt-text);
+}
+.includedSub {
+  margin: var(--vt-space-2) 0 0;
+  font-size: var(--vt-fs-sm);
+  color: var(--vt-text-muted);
+}
+.includedList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--vt-space-4) var(--vt-space-8);
+}
+.includedList li {
+  display: flex;
+  align-items: center;
+  gap: var(--vt-space-3);
+  font-size: var(--vt-fs-sm);
+  color: var(--vt-text);
+}
+.includedList svg {
+  flex: none;
+  color: var(--vt-purple-400);
+}
+
+.pay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--vt-space-4);
+  margin-top: var(--vt-space-12);
+  padding: var(--vt-space-8);
+  border-radius: var(--vt-r-lg);
+  background: var(--vt-surface);
+  border: 1px solid var(--vt-border);
+}
+.payLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--vt-space-2);
+  color: var(--vt-text-muted);
+  font-size: var(--vt-fs-sm);
+}
+.payLabel svg {
+  color: #6ee7b7;
+}
+.payMethods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--vt-space-3);
+}
+.payChip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--vt-space-2) var(--vt-space-4);
+  border-radius: var(--vt-r-sm);
+  background: var(--vt-surface-2);
+  border: 1px solid var(--vt-border);
+}
+.payChip img {
+  display: block;
+  height: var(--vt-icon-md);
+  width: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cardPopular,
+  .cardPopular:hover {
+    transform: none;
+  }
+  .cardPopular:hover {
+    transform: translateY(-8px);
+  }
+  .includedList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  /* Lead with the recommended plan when cards stack — the first card is
+     what most mobile users evaluate, so anchor on best value. */
+  .cardPopular {
+    order: -1;
+  }
+  .included {
+    padding: var(--vt-space-6);
+  }
+  .includedList {
+    grid-template-columns: 1fr;
+  }
+}

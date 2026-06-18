@@ -1,0 +1,193 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  padding: var(--vt-space-4) 0;
+  transition: background var(--vt-base), backdrop-filter var(--vt-base), border-color var(--vt-base);
+  border-bottom: 1px solid transparent;
+}
+
+.headerScrolled {
+  /* Near-solid neutral bar — guaranteed legible over any content, no reliance on blur */
+  background: rgba(12, 12, 14, 0.98);
+  border-bottom-color: var(--vt-border);
+  box-shadow: var(--vt-shadow-sm);
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .headerScrolled {
+    /* Whisper of translucency + blur as polish; opacity high enough to stay clean if blur is weak */
+    background: rgba(12, 12, 14, 0.96);
+    backdrop-filter: blur(18px) saturate(150%);
+    -webkit-backdrop-filter: blur(18px) saturate(150%);
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--vt-space-6);
+}
+
+/* Logo */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--vt-space-1);
+  font-weight: 800;
+  font-size: var(--vt-fs-h4);
+  letter-spacing: -0.02em;
+  color: var(--vt-text);
+  text-decoration: none;
+}
+.logoMark {
+  color: var(--vt-text);
+}
+.logoBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px var(--vt-space-2);
+  border-radius: 8px;
+  background: var(--vt-grad-accent);
+  color: #fff;
+  box-shadow: var(--vt-shadow-btn);
+}
+
+/* Links */
+.links {
+  display: flex;
+  align-items: center;
+  gap: var(--vt-space-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.links a {
+  color: var(--vt-text-muted);
+  font-size: var(--vt-fs-sm);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--vt-fast);
+}
+.links a:hover {
+  color: var(--vt-text);
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--vt-space-4);
+}
+.trial {
+  color: var(--vt-text-muted);
+  font-size: var(--vt-fs-sm);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--vt-fast);
+}
+.trial:hover {
+  color: var(--vt-text);
+}
+.renew {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--vt-space-2) var(--vt-space-6);
+  border: none;
+  border-radius: var(--vt-r-pill);
+  background: #fff;
+  color: #120a1f;
+  font-family: inherit;
+  font-size: var(--vt-fs-sm);
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--vt-fast), box-shadow var(--vt-fast);
+}
+.renew:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px -10px rgba(255, 255, 255, 0.4);
+  color: #120a1f;
+}
+
+.burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--vt-control-sm);
+  height: var(--vt-control-sm);
+  border-radius: var(--vt-r-md);
+  background: var(--vt-surface-2);
+  border: 1px solid var(--vt-border);
+  color: var(--vt-text);
+  cursor: pointer;
+}
+
+.mobilePanel {
+  display: none;
+  flex-direction: column;
+  gap: var(--vt-space-1);
+  margin: var(--vt-space-3) var(--vt-space-4) 0;
+  padding: var(--vt-space-4);
+  border-radius: var(--vt-r-md);
+  background: rgba(18, 10, 31, 0.96);
+  border: 1px solid var(--vt-border);
+  backdrop-filter: blur(14px);
+}
+.mobilePanel a {
+  padding: var(--vt-space-2) var(--vt-space-3);
+  border-radius: 10px;
+  color: var(--vt-text-muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+.mobilePanel a:hover {
+  background: var(--vt-surface-3);
+  color: var(--vt-text);
+}
+.mobileRenew {
+  display: block;
+  width: 100%;
+  margin-top: var(--vt-space-2);
+  padding: var(--vt-space-3);
+  border: none;
+  border-radius: var(--vt-r-md);
+  text-align: center;
+  background: var(--vt-grad-purple);
+  color: #fff;
+  font-family: inherit;
+  font-size: var(--vt-fs-sm);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 996px) {
+  .links,
+  .trial {
+    display: none;
+  }
+  .burger {
+    display: inline-flex;
+  }
+  .mobilePanel {
+    display: flex;
+  }
+  /* Reclaim horizontal room so the persistent CTA + burger sit cleanly. */
+  .nav {
+    gap: var(--vt-space-3);
+  }
+  .actions {
+    gap: var(--vt-space-2);
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: var(--vt-fs-h5);
+  }
+  .renew {
+    padding: var(--vt-space-2) var(--vt-space-4);
+  }
+}

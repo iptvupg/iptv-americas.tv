@@ -1,0 +1,115 @@
+.section {
+  padding: 0 0 var(--vt-section-y);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--vt-space-3);
+  text-align: center;
+  margin-bottom: var(--vt-space-12);
+}
+
+.scroller {
+  overflow-x: auto;
+  padding: var(--vt-space-2) 0 var(--vt-space-4);
+  scrollbar-width: thin;
+  scrollbar-color: var(--vt-purple-600) transparent;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+}
+.scroller::-webkit-scrollbar {
+  height: 6px;
+}
+.scroller::-webkit-scrollbar-thumb {
+  background: var(--vt-purple-700);
+  border-radius: 999px;
+}
+
+.track {
+  display: flex;
+  gap: var(--vt-space-4);
+  width: max-content;
+  padding-inline: max(24px, calc((100vw - var(--vt-container)) / 2 + 24px));
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vt-space-4);
+  width: 340px;
+  flex: none;
+  padding: var(--vt-space-6) var(--vt-space-6);
+  border-radius: var(--vt-r-lg);
+  border: 1px solid var(--vt-border);
+  background: var(--vt-surface);
+  box-shadow: inset 0 1px 0 var(--vt-highlight), var(--vt-shadow-md);
+}
+
+.stars {
+  display: inline-flex;
+  gap: 2px;
+  color: #f5b50a;
+}
+
+.quote {
+  margin: 0;
+  flex: 1;
+  font-size: var(--vt-fs-body);
+  line-height: 1.6;
+  color: var(--vt-text);
+  text-wrap: pretty;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: var(--vt-space-3);
+  padding-top: var(--vt-space-1);
+}
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--vt-control-sm);
+  height: var(--vt-control-sm);
+  flex: none;
+  border-radius: 50%;
+  background: var(--vt-surface-3);
+  border: 1px solid var(--vt-border);
+  color: var(--vt-text);
+  font-weight: 700;
+}
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.name {
+  font-size: var(--vt-fs-sm);
+  font-weight: 600;
+  color: var(--vt-text);
+}
+.role {
+  font-size: var(--vt-fs-xs);
+  color: var(--vt-text-dim);
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 280px;
+  }
+}

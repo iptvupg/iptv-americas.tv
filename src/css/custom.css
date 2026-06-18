@@ -1,0 +1,625 @@
+/**
+ * ════════════════════════════════════════════════════════════════
+ *  VAI TV — DESIGN SYSTEM
+ *  A first-principles visual language.
+ *  References: Netflix (cinematic depth) · Linear (precision &
+ *  restraint) · Apple (typographic authority) · Stripe (trust).
+ *
+ *  Principles
+ *   1. Restraint is luxury — one accent, neutral everywhere else.
+ *   2. Depth comes from light & shadow, never from color.
+ *   3. Type carries hierarchy; color and weight are secondary.
+ *   4. Every surface sits on a deliberate elevation plane.
+ *   5. Motion is physics — calm, decisive, never decorative.
+ * ════════════════════════════════════════════════════════════════
+ */
+
+:root {
+  /* ───────────────────────────────────────────────
+   * 1 · COLOR SYSTEM
+   * Neutral ramp is the spine. Accent is a guest.
+   * ─────────────────────────────────────────────── */
+
+  /* Neutral ramp — true cinematic neutral, no color cast */
+  --vt-n-0: #ffffff;
+  --vt-n-50: #f7f7f8;
+  --vt-n-100: #ebebed;
+  --vt-n-200: #cfcfd4;
+  --vt-n-300: #a6a6ae;
+  --vt-n-400: #7c7c85;
+  --vt-n-500: #57575f;
+  --vt-n-600: #3c3c43;
+  --vt-n-700: #29292e;
+  --vt-n-800: #1a1a1d;
+  --vt-n-900: #111113;
+  --vt-n-950: #0a0a0b;
+
+  /* Accent ramp — restrained violet, the single brand signal */
+  --vt-a-50: #f4efff;
+  --vt-a-100: #e6dbff;
+  --vt-a-200: #d2c0fd;
+  --vt-a-300: #b9a0fb;
+  --vt-a-400: #a07cf7;
+  --vt-a-500: #8b5cf6;
+  --vt-a-600: #7c3aed;
+  --vt-a-700: #6325c9;
+
+  /* Legacy accent aliases (stable component API) */
+  --vt-purple-50: var(--vt-a-50);
+  --vt-purple-200: var(--vt-a-200);
+  --vt-purple-300: var(--vt-a-300);
+  --vt-purple-400: var(--vt-a-400);
+  --vt-purple-500: var(--vt-a-500);
+  --vt-purple-600: var(--vt-a-600);
+  --vt-purple-700: var(--vt-a-700);
+
+  /* Semantic — used only for state, never decoration */
+  --vt-success: #34d399;
+  --vt-success-soft: rgba(16, 185, 129, 0.12);
+  --vt-success-border: rgba(16, 185, 129, 0.28);
+  --vt-warning: #fbbf24;
+  --vt-danger: #f87171;
+  --vt-gold: #f5b50a; /* review stars only */
+
+  /* ───────────────────────────────────────────────
+   * 2 · SURFACE SYSTEM
+   * Five planes, each a step toward the light.
+   * canvas → base → surface → raised → overlay
+   * ─────────────────────────────────────────────── */
+  --vt-bg: #0a0a0b;          /* canvas — the room */
+  --vt-bg-2: #0e0e10;        /* base — section ground */
+  --vt-surface: #141416;     /* surface — cards */
+  --vt-surface-2: #1b1b1e;   /* raised — inputs, chips */
+  --vt-surface-3: #232327;   /* overlay — popovers, hovers */
+
+  /* ───────────────────────────────────────────────
+   * 3 · TEXT SYSTEM
+   * Three weights of presence on dark.
+   * ─────────────────────────────────────────────── */
+  --vt-text: #f7f7f8;        /* primary — headings & key copy */
+  --vt-text-muted: #a6a6ae;  /* secondary — body & support */
+  --vt-text-dim: #6e6e77;    /* tertiary — meta, captions */
+  --vt-text-faint: #4a4a52;  /* quaternary — disabled, divid' labels */
+
+  /* ───────────────────────────────────────────────
+   * 4 · BORDER & HAIRLINE SYSTEM
+   * Light caught on an edge, never a hard line.
+   * ─────────────────────────────────────────────── */
+  --vt-hairline: rgba(255, 255, 255, 0.06);
+  --vt-border: rgba(255, 255, 255, 0.08);
+  --vt-border-2: rgba(255, 255, 255, 0.11);
+  --vt-border-strong: rgba(255, 255, 255, 0.16);
+  --vt-highlight: rgba(255, 255, 255, 0.05); /* top inner light-catch */
+
+  /* Accent surfaces — used sparingly for active/selected */
+  --vt-accent-soft: rgba(139, 92, 246, 0.1);
+  --vt-accent-border: rgba(139, 92, 246, 0.34);
+
+  /* ───────────────────────────────────────────────
+   * 5 · ELEVATION SYSTEM
+   * Neutral ambient shadow only. Higher plane = softer,
+   * larger, more diffuse. A top light-catch sells the lift.
+   * ─────────────────────────────────────────────── */
+  --vt-e0: none;
+  --vt-e1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --vt-e2:
+    0 1px 0 0 rgba(255, 255, 255, 0.03) inset,
+    0 2px 6px -2px rgba(0, 0, 0, 0.4),
+    0 8px 20px -8px rgba(0, 0, 0, 0.5);
+  --vt-e3:
+    0 1px 0 0 rgba(255, 255, 255, 0.04) inset,
+    0 6px 16px -8px rgba(0, 0, 0, 0.55),
+    0 18px 40px -16px rgba(0, 0, 0, 0.6);
+  --vt-e4:
+    0 1px 0 0 rgba(255, 255, 255, 0.05) inset,
+    0 12px 28px -12px rgba(0, 0, 0, 0.62),
+    0 36px 70px -30px rgba(0, 0, 0, 0.72);
+  --vt-e5:
+    0 1px 0 0 rgba(255, 255, 255, 0.06) inset,
+    0 24px 50px -20px rgba(0, 0, 0, 0.7),
+    0 60px 120px -40px rgba(0, 0, 0, 0.8);
+
+  /* Legacy shadow aliases (stable component API) */
+  --vt-shadow-sm: var(--vt-e1);
+  --vt-shadow-md: var(--vt-e2);
+  --vt-shadow-lg: var(--vt-e4);
+  --vt-shadow-card: var(--vt-e3);
+  --vt-shadow-accent: var(--vt-e3);
+  --vt-shadow-btn: var(--vt-e1);
+
+  /* ───────────────────────────────────────────────
+   * 6 · RADIUS SYSTEM  —  Small 8 · Medium 12 · Large 16 · XL 24
+   * Exactly four steps + pill. No other rounding exists.
+   * ─────────────────────────────────────────────── */
+  --vt-r-sm: 8px;
+  --vt-r-md: 12px;
+  --vt-r-lg: 16px;
+  --vt-r-xl: 24px;
+  --vt-r-pill: 999px;
+  /* Legacy aliases collapse onto the four-step scale */
+  --vt-r-xs: var(--vt-r-sm);   /* 8 */
+  --vt-r-2xl: var(--vt-r-xl);  /* 24 */
+
+  /* ───────────────────────────────────────────────
+   * 6b · ICON & CONTROL SIZE SYSTEM
+   * Square surfaces (icon tiles, avatars, nodes, toggles): 32·40·48·56·64·72
+   * Glyphs (the SVG inside): 16·20·24·32
+   * ─────────────────────────────────────────────── */
+  --vt-control-xs: 32px;
+  --vt-control-sm: 40px;
+  --vt-control-md: 48px;
+  --vt-control-lg: 56px;
+  --vt-control-xl: 64px;
+  --vt-control-2xl: 72px;
+  --vt-icon-xs: 16px;
+  --vt-icon-sm: 20px;
+  --vt-icon-md: 24px;
+  --vt-icon-lg: 32px;
+
+  /* ───────────────────────────────────────────────
+   * 7 · SPACING SYSTEM
+   * The ONLY spacing values: 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 · 128
+   * ─────────────────────────────────────────────── */
+  --vt-space-1: 4px;
+  --vt-space-2: 8px;
+  --vt-space-3: 12px;
+  --vt-space-4: 16px;
+  --vt-space-6: 24px;
+  --vt-space-8: 32px;
+  --vt-space-12: 48px;
+  --vt-space-16: 64px;
+  --vt-space-24: 96px;
+  --vt-space-32: 128px;
+  /* Off-scale legacy names snap to the nearest allowed step */
+  --vt-space-5: var(--vt-space-6);    /* 20 → 24 */
+  --vt-space-10: var(--vt-space-12);  /* 40 → 48 */
+  --vt-space-20: var(--vt-space-16);  /* 80 → 64 */
+
+  /* ───────────────────────────────────────────────
+   * 8 · TYPOGRAPHY SYSTEM
+   * One family (Inter). A ~1.25 modular, fluid scale.
+   * Tracking tightens as size grows (optical authority).
+   * ─────────────────────────────────────────────── */
+  --vt-font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Type scale — exact, discrete steps. No value lives off this ladder.
+   * Display XL 72 · L 64 · M 56 · H1 48 · H2 40 · H3 32 · H4 24 · H5 20
+   * Body L 18 · Body 16 · Small 14 · (Caption 12, sub-scale utility) */
+  --vt-fs-display-xl: 72px;
+  --vt-fs-display-l: 64px;
+  --vt-fs-display-m: 56px;
+  --vt-fs-h1: 48px;
+  --vt-fs-h2: 40px;
+  --vt-fs-h3: 32px;
+  --vt-fs-h4: 24px;
+  --vt-fs-h5: 20px;
+  --vt-fs-body-lg: 18px;
+  --vt-fs-body: 16px;
+  --vt-fs-sm: 14px;
+  --vt-fs-xs: 12px;
+  /* Legacy aliases map onto the scale */
+  --vt-fs-display: var(--vt-fs-display-xl); /* hero */
+  --vt-fs-lead: var(--vt-fs-body-lg);       /* section subtitles */
+
+  --vt-fw-regular: 400;
+  --vt-fw-medium: 500;
+  --vt-fw-semibold: 600;
+  --vt-fw-bold: 700;
+  --vt-fw-heavy: 800;
+
+  --vt-tracking-tight: -0.04em;  /* display */
+  --vt-tracking-snug: -0.025em;  /* headings */
+  --vt-tracking-normal: 0;       /* body */
+  --vt-tracking-wide: 0.08em;    /* small caps */
+  --vt-tracking-wider: 0.14em;   /* eyebrows */
+
+  --vt-leading-tight: 1.05;
+  --vt-leading-snug: 1.2;
+  --vt-leading-normal: 1.6;
+  --vt-leading-relaxed: 1.7;
+
+  /* ───────────────────────────────────────────────
+   * 9 · GRID & LAYOUT SYSTEM
+   * One reading column, generous gutters, fluid section rhythm.
+   * ─────────────────────────────────────────────── */
+  --vt-container: 1280px;
+  --vt-container-narrow: 768px;
+  --vt-gutter: var(--vt-space-6);          /* 24 */
+  /* Section rhythm — Small 64 · Normal 96 · Large 128 */
+  --vt-section-sm: var(--vt-space-16);     /* 64 */
+  --vt-section-y: var(--vt-space-24);      /* 96 — default */
+  --vt-section-lg: var(--vt-space-32);     /* 128 */
+  --vt-grid-gap: var(--vt-space-6);        /* 24 */
+
+  /* ───────────────────────────────────────────────
+   * 10 · MOTION SYSTEM
+   * Calm, physical easing. Three speeds, clear intent.
+   * ─────────────────────────────────────────────── */
+  --vt-ease: cubic-bezier(0.22, 1, 0.36, 1);        /* ease-out-expo: arrivals */
+  --vt-ease-inout: cubic-bezier(0.65, 0, 0.35, 1);  /* symmetric moves */
+  --vt-spring: cubic-bezier(0.34, 1.56, 0.64, 1);   /* playful overshoot */
+  --vt-fast: 0.16s;   /* micro feedback */
+  --vt-base: 0.28s;   /* standard transition */
+  --vt-slow: 0.5s;    /* reveals, large surfaces */
+
+  /* ───────────────────────────────────────────────
+   * GRADIENTS & AMBIENT (reserved, rare)
+   * ─────────────────────────────────────────────── */
+  /* Brand fill is a single confident solid — flat like Stripe/Linear,
+     never a diagonal "SaaS-template" gradient. Kept under the legacy
+     token names so every accent surface stays consistent. */
+  --vt-grad-accent: var(--vt-a-600);
+  --vt-grad-purple: var(--vt-a-600);
+  --vt-grad-text: linear-gradient(180deg, #ffffff 0%, #c4c4cc 150%);
+  --vt-grad-surface: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+  --vt-glow: radial-gradient(58% 42% at 50% -10%, rgba(124, 58, 237, 0.11), transparent 60%);
+
+  /* ───────────────────────────────────────────────
+   * DOCUSAURUS BRIDGE
+   * ─────────────────────────────────────────────── */
+  --ifm-color-primary: #8b5cf6;
+  --ifm-color-primary-dark: #7c3aed;
+  --ifm-color-primary-darker: #6d28d9;
+  --ifm-color-primary-darkest: #5b21b6;
+  --ifm-color-primary-light: #a78bfa;
+  --ifm-color-primary-lighter: #b99bfb;
+  --ifm-color-primary-lightest: #c4b5fd;
+  --ifm-background-color: #0a0a0b;
+  --ifm-font-family-base: var(--vt-font);
+  --ifm-font-family-heading: var(--vt-font);
+  --ifm-heading-font-weight: 700;
+  --ifm-code-font-size: 95%;
+  --ifm-line-height-base: 1.6;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #8b5cf6;
+  --ifm-background-color: #0a0a0b;
+}
+
+/* Responsive type & rhythm — every step stays ON the scale.
+ * Large display/headings drop down the ladder on smaller viewports. */
+@media (max-width: 1024px) {
+  :root {
+    --vt-fs-display-xl: 56px; /* 72 → 56 (display M) */
+    --vt-fs-display-l: 48px;  /* 64 → 48 (H1) */
+    --vt-fs-h1: 40px;         /* 48 → 40 (H2) */
+    --vt-section-y: 64px;     /* 96 → 64 */
+    --vt-section-lg: 96px;    /* 128 → 96 */
+  }
+}
+@media (max-width: 640px) {
+  :root {
+    --vt-fs-display-xl: 40px; /* → H2 */
+    --vt-fs-display-l: 40px;  /* → H2 */
+    --vt-fs-display-m: 40px;  /* → H2 */
+    --vt-fs-h1: 32px;         /* → H3 */
+    --vt-fs-h2: 32px;         /* → H3 */
+    --vt-fs-h3: 24px;         /* → H4 */
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+ *  BASE / RESET
+ * ════════════════════════════════════════════════════════════════ */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+  background-color: var(--vt-bg);
+  color: var(--vt-text);
+  scroll-behavior: smooth;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
+  letter-spacing: var(--vt-tracking-normal);
+}
+
+/* Hide Docusaurus' default navbar on the landing page */
+body:has(.landing-main) .navbar {
+  display: none;
+}
+body:has(.landing-main) {
+  --ifm-navbar-height: 0px;
+}
+
+/* Page canvas: cinematic top-glow + ultra-fine film grain for depth */
+.landing-main {
+  position: relative;
+  background: var(--vt-glow), var(--vt-bg);
+  overflow-x: hidden;
+}
+.landing-main::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.landing-main > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ════════════════════════════════════════════════════════════════
+ *  LAYOUT PRIMITIVES
+ * ════════════════════════════════════════════════════════════════ */
+.vt-container {
+  width: 100%;
+  max-width: var(--vt-container);
+  margin-inline: auto;
+  padding-inline: var(--vt-gutter);
+}
+.vt-container-narrow {
+  max-width: var(--vt-container-narrow);
+}
+
+/* ════════════════════════════════════════════════════════════════
+ *  TYPOGRAPHY PRIMITIVES
+ * ════════════════════════════════════════════════════════════════ */
+.vt-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--vt-space-2);
+  padding: var(--vt-space-2) var(--vt-space-3);
+  font-size: var(--vt-fs-xs);
+  font-weight: var(--vt-fw-semibold);
+  letter-spacing: var(--vt-tracking-wider);
+  text-transform: uppercase;
+  color: var(--vt-text-muted);
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--vt-border);
+  border-radius: var(--vt-r-pill);
+}
+.vt-eyebrow::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--vt-a-400);
+}
+
+.vt-section-title {
+  font-size: var(--vt-fs-h2);
+  font-weight: var(--vt-fw-bold);
+  line-height: var(--vt-leading-snug);
+  letter-spacing: var(--vt-tracking-snug);
+  margin: 0;
+  color: var(--vt-text);
+  text-wrap: balance;
+}
+
+.vt-section-sub {
+  margin: 0;
+  color: var(--vt-text-muted);
+  font-size: var(--vt-fs-lead);
+  line-height: var(--vt-leading-normal);
+  max-width: var(--vt-container-narrow);
+  text-wrap: pretty;
+}
+
+/* ════════════════════════════════════════════════════════════════
+ *  BUTTON SYSTEM
+ *  primary (solid white = highest intent) · secondary (accent) ·
+ *  ghost (low intent) · light. Sizes: sm / base / lg.
+ * ════════════════════════════════════════════════════════════════ */
+.vt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vt-space-2);
+  padding: var(--vt-space-3) var(--vt-space-6);
+  border-radius: var(--vt-r-pill);
+  font-size: var(--vt-fs-sm);
+  font-weight: var(--vt-fw-semibold);
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform var(--vt-fast) var(--vt-ease),
+    box-shadow var(--vt-base), background var(--vt-base), border-color var(--vt-base);
+}
+.vt-btn:hover { transform: translateY(-1px); }
+.vt-btn:active { transform: translateY(0); }
+
+.vt-btn-sm { padding: var(--vt-space-2) var(--vt-space-4); font-size: var(--vt-fs-sm); }
+.vt-btn-lg { padding: var(--vt-space-4) var(--vt-space-8); font-size: var(--vt-fs-body); }
+
+.vt-btn-primary {
+  background: var(--vt-n-0);
+  color: #0a0a0c;
+  box-shadow: var(--vt-e1);
+}
+.vt-btn-primary:hover {
+  color: #0a0a0c;
+  background: #fff;
+  box-shadow: 0 10px 28px -10px rgba(255, 255, 255, 0.35);
+}
+.vt-btn-light { background: var(--vt-n-0); color: #0a0a0c; }
+.vt-btn-light:hover { color: #0a0a0c; box-shadow: 0 12px 30px -12px rgba(255, 255, 255, 0.3); }
+
+.vt-btn-secondary {
+  background: var(--vt-grad-accent);
+  color: #fff;
+  box-shadow: var(--vt-e1);
+}
+.vt-btn-secondary:hover {
+  color: #fff;
+  box-shadow: 0 12px 30px -12px rgba(124, 58, 237, 0.5);
+}
+
+.vt-btn-ghost {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: var(--vt-border-2);
+  color: var(--vt-text);
+}
+.vt-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--vt-border-strong);
+  color: var(--vt-text);
+}
+
+/* ════════════════════════════════════════════════════════════════
+ *  CARD SYSTEM
+ *  Base surface on elevation plane 2, hairline edge, optional
+ *  gradient light-catch ring (::before).
+ * ════════════════════════════════════════════════════════════════ */
+.vt-card {
+  position: relative;
+  border-radius: var(--vt-r-lg);
+  background: var(--vt-surface);
+  border: 1px solid var(--vt-border);
+  box-shadow: var(--vt-e2);
+}
+.vt-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--vt-grad-surface);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ════════════════════════════════════════════════════════════════
+ *  ICONOGRAPHY SYSTEM
+ *  Line icons: 1.8 stroke, round caps/joins, currentColor.
+ *  Sizes step with type. Tiles share one footprint.
+ * ════════════════════════════════════════════════════════════════ */
+.vt-icon-sm { width: 14px; height: 14px; }
+.vt-icon-md { width: 18px; height: 18px; }
+.vt-icon-lg { width: 24px; height: 24px; }
+.vt-icon-tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--vt-r-sm);
+  background: var(--vt-accent-soft);
+  border: 1px solid var(--vt-accent-border);
+  color: var(--vt-a-300);
+}
+
+/* ════════════════════════════════════════════════════════════════
+ *  ANIMATION SYSTEM
+ *  Reusable, physics-based. Reveal on scroll, ambient float.
+ * ════════════════════════════════════════════════════════════════ */
+@keyframes vt-rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes vt-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes vt-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes vt-shimmer {
+  from { background-position: -200% 0; }
+  to { background-position: 200% 0; }
+}
+.vt-reveal { animation: vt-rise var(--vt-slow) var(--vt-ease) both; }
+.vt-fade-in { animation: vt-fade var(--vt-base) var(--vt-ease) both; }
+
+/* Scroll-triggered reveal. Elements tagged [data-reveal] start hidden and
+ * rise into place when the global observer adds .vt-in. Optional --i index
+ * staggers children within a group. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--vt-slow) var(--vt-ease),
+    transform var(--vt-slow) var(--vt-ease);
+  transition-delay: calc(var(--i, 0) * 80ms);
+  will-change: opacity, transform;
+}
+[data-reveal].vt-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ════════════════════════════════════════════════════════════════
+ *  SECTION RHYTHM — one continuous, cinematic page
+ *  No bands, no borders, no boxes. Every section shares the same
+ *  dark base and page atmosphere. Gentle depth comes from two
+ *  edgeless cues that fade fully to transparent at both ends, so
+ *  neighbouring sections always blend — never butt up as panels:
+ *    1. an ultra-faint tonal LIFT on alternating sections
+ *    2. a soft, centre-weighted SEAM where sections meet
+ *  One neutral family (--vt-bg) + the single purple accent only.
+ * ════════════════════════════════════════════════════════════════ */
+.landing-main main > section {
+  position: relative;
+  /* Offset in-page anchor jumps so headings clear the fixed navbar
+     instead of hiding behind it. */
+  scroll-margin-top: var(--vt-space-24);
+}
+/* (1) Barely-there surface lift, feathered top & bottom to nothing
+   so it reads as breathing depth, not a rectangle. */
+.landing-main main > section:nth-of-type(2n + 1):not(#home) {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.016) 50%,
+    transparent 100%
+  );
+}
+/* (2) Soft seam between sections — a hairline of light that fades
+   out toward the edges, so there is no hard border line. */
+.landing-main main > section:nth-of-type(n + 3)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--vt-highlight) 50%,
+    transparent 100%
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════
+ *  ACCESSIBILITY
+ * ════════════════════════════════════════════════════════════════ */
+a:focus-visible,
+button:focus-visible,
+[role="tab"]:focus-visible {
+  outline: 2px solid var(--vt-a-400);
+  outline-offset: 2px;
+  border-radius: var(--vt-r-xs);
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.32);
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
