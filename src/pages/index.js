@@ -9,7 +9,8 @@ import Devices from '@site/src/components/landing/Devices';
 import Pricing from '@site/src/components/landing/Pricing';
 import Stats from '@site/src/components/landing/Stats';
 import Features from '@site/src/components/landing/Features';
-import Testimonials from '@site/src/components/landing/Testimonials';
+import WhatIsIptv from '@site/src/components/landing/WhatIsIptv';
+import About from '@site/src/components/landing/About';
 import Faq from '@site/src/components/landing/Faq';
 import FinalCta from '@site/src/components/landing/FinalCta';
 import Footer from '@site/src/components/landing/Footer';
@@ -46,12 +47,6 @@ const STRUCTURED_DATA = {
       brand: { '@id': `${SITE_URL}/#organization` },
       description:
         '30,000+ live TV channels and 150,000+ movies & series in 4K, with all sports, EPG, catch-up and 24/7 support. Works on Smart TV, Firestick, phone, tablet and PC.',
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '4.9',
-        reviewCount: '2000',
-        bestRating: '5',
-      },
       offers: [
         { '@type': 'Offer', name: '1 Month', price: '16', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: `${SITE_URL}/#pricing` },
         { '@type': 'Offer', name: '3 Months', price: '39', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: `${SITE_URL}/#pricing` },
@@ -65,34 +60,74 @@ const STRUCTURED_DATA = {
       mainEntity: [
         {
           '@type': 'Question',
-          name: 'How To Configure My Subscription After Purchasing?',
+          name: 'How do I set up my subscription after purchasing?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Once you complete your purchase, our agent will send your login credentials and a step-by-step setup guide by email within minutes. You can then enter your details into any supported app and start streaming.',
+            text: 'After you complete your order, our team sends your login credentials and a step-by-step setup guide by email within minutes. Enter your details into any supported app and start streaming.',
           },
         },
         {
           '@type': 'Question',
-          name: 'Can I Customize My Playlist (TV Channels, Movies, Series)?',
+          name: 'Which devices can I use with IPTV Americas?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Yes. We offer free playlist customization. Just tell our support team which channels, regions, or content categories you want, and we will tailor the lineup to you.',
+            text: 'You can stream on Smart TVs (Samsung, LG), Amazon Firestick and Fire TV, Apple TV, Roku, Android and iOS phones and tablets, MAG boxes, and Windows or macOS computers.',
           },
         },
         {
           '@type': 'Question',
-          name: 'Can I Use My IPTV Account While Traveling Abroad?',
+          name: 'How quickly is my subscription activated?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Absolutely. Your subscription works anywhere with a stable internet connection. Many customers use a VPN for the smoothest experience while traveling.',
+            text: 'Activation is instant. Your login credentials are emailed to you within minutes of your order being confirmed.',
           },
         },
         {
           '@type': 'Question',
-          name: 'Can I Cancel My Subscription?',
+          name: 'What payment methods do you accept?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Yes, you can cancel at any time. We also offer a money-back guarantee, so if you are not satisfied you can request a refund within the eligible period.',
+            text: 'We accept card payments, PayPal, and USDT (crypto). Orders are completed with our team over WhatsApp — no payment is taken directly on this website.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What internet speed do I need?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'A stable broadband connection is recommended. Around 15 Mbps is comfortable for HD, and roughly 25 Mbps or higher is recommended for smooth 4K streaming.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Can I customize my playlist (TV channels, movies, series)?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. We offer free playlist customization. Tell our support team which channels, regions, or content categories you want, and we will tailor the lineup to you.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Can I use my IPTV account while traveling abroad?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Your subscription works anywhere with a stable internet connection. Many customers use a VPN for the smoothest experience while traveling.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Is there a money-back guarantee?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Every plan is backed by a 30-day money-back guarantee. If you are not satisfied, you can request a refund within the eligible period.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Can I cancel my subscription?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes, you can cancel at any time. Because plans are billed once with no auto-renewal, your subscription simply ends when its term is over unless you choose to renew.',
           },
         },
       ],
@@ -103,8 +138,8 @@ const STRUCTURED_DATA = {
 export default function Home() {
   return (
     <Layout
-      title="Lightning-Fast IPTV Streaming — 30,000+ Channels in 4K"
-      description="Stream 30,000+ live TV channels and 150,000+ movies & series in 4K on any device. All sports, instant activation, no contract — plans from $7.50/mo with a 30-day money-back guarantee."
+      title="Best IPTV Service in USA, Canada & Latin America"
+      description="Watch live TV, sports & movies in HD & 4K on any device. 30,000+ channels, instant activation, no contract — get your IPTV plan today, risk-free for 30 days."
       noFooter
       wrapperClassName="landing-main"
     >
@@ -123,7 +158,8 @@ export default function Home() {
           <Devices />
           <Features />
           <HowItWorks />
-          <Testimonials />
+          <WhatIsIptv />
+          <About />
           <Faq />
           <FinalCta />
         </main>

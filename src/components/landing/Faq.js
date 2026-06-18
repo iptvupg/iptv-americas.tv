@@ -5,20 +5,40 @@ import styles from './Faq.module.css';
 
 const ITEMS = [
   {
-    q: 'How To Configure My Subscription After Purchasing?',
-    a: 'Once you complete your purchase, our agent will send your login credentials and a step-by-step setup guide by email within minutes. You can then enter your details into any supported app and start streaming.',
+    q: 'How do I set up my subscription after purchasing?',
+    a: 'After you complete your order, our team sends your login credentials and a step-by-step setup guide by email within minutes. Enter your details into any supported app and start streaming.',
   },
   {
-    q: 'Can I Customize My Playlist (TV Channels, Movies, Series)?',
-    a: 'Yes. We offer free playlist customization. Just tell our support team which channels, regions, or content categories you want, and we will tailor the lineup to you.',
+    q: 'Which devices can I use with IPTV Americas?',
+    a: 'You can stream on Smart TVs (Samsung, LG), Amazon Firestick and Fire TV, Apple TV, Roku, Android and iOS phones and tablets, MAG boxes, and Windows or macOS computers.',
   },
   {
-    q: 'Can I Use My IPTV Account While Traveling Abroad?',
-    a: 'Absolutely. Your subscription works anywhere with a stable internet connection. Many customers use a VPN for the smoothest experience while traveling.',
+    q: 'How quickly is my subscription activated?',
+    a: 'Activation is instant. Your login credentials are emailed to you within minutes of your order being confirmed.',
   },
   {
-    q: 'Can I Cancel My Subscription?',
-    a: 'Yes, you can cancel at any time. We also offer a money-back guarantee, so if you are not satisfied you can request a refund within the eligible period.',
+    q: 'What payment methods do you accept?',
+    a: 'We accept card payments, PayPal, and USDT (crypto). Orders are completed with our team over WhatsApp — no payment is taken directly on this website.',
+  },
+  {
+    q: 'What internet speed do I need?',
+    a: 'A stable broadband connection is recommended. Around 15 Mbps is comfortable for HD, and roughly 25 Mbps or higher is recommended for smooth 4K streaming.',
+  },
+  {
+    q: 'Can I customize my playlist (TV channels, movies, series)?',
+    a: 'Yes. We offer free playlist customization. Tell our support team which channels, regions, or content categories you want, and we will tailor the lineup to you.',
+  },
+  {
+    q: 'Can I use my IPTV account while traveling abroad?',
+    a: 'Yes. Your subscription works anywhere with a stable internet connection. Many customers use a VPN for the smoothest experience while traveling.',
+  },
+  {
+    q: 'Is there a money-back guarantee?',
+    a: 'Yes. Every plan is backed by a 30-day money-back guarantee. If you are not satisfied, you can request a refund within the eligible period.',
+  },
+  {
+    q: 'Can I cancel my subscription?',
+    a: 'Yes, you can cancel at any time. Because plans are billed once with no auto-renewal, your subscription simply ends when its term is over unless you choose to renew.',
   },
 ];
 
@@ -26,11 +46,11 @@ export default function Faq() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="contact" className={styles.section}>
+    <section id="faq" className={styles.section}>
       <div className={`vt-container ${styles.inner}`}>
         <header className={styles.head} data-reveal>
           <span className="vt-eyebrow">FAQ</span>
-          <h2 className="vt-section-title">Frequently asked questions</h2>
+          <h2 className="vt-section-title">IPTV Service FAQs</h2>
         </header>
 
         <div className={styles.list}>

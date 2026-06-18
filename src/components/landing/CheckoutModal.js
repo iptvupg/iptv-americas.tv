@@ -187,7 +187,7 @@ export default function CheckoutModal() {
           </button>
 
           <p className={styles.note}>
-            <IconShield width={13} height={13} /> Your details are sent privately to confirm your order.
+            <IconShield width={13} height={13} /> Your order is completed with our team over WhatsApp — no payment is taken on this site.
           </p>
         </form>
       </div>

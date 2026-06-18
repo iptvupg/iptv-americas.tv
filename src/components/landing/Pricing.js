@@ -50,7 +50,7 @@ export default function Pricing() {
       <div className={`vt-container ${styles.inner}`}>
         <header className={styles.head} data-reveal>
           <span className="vt-eyebrow">Pricing</span>
-          <h2 className="vt-section-title">One subscription, every channel</h2>
+          <h2 className="vt-section-title">IPTV Subscription Plans &amp; Pricing</h2>
           <p className="vt-section-sub">
             Every plan unlocks the full library — pick the term that suits you.
             Billed once, no auto-renewal, cancel anytime.
@@ -115,7 +115,7 @@ export default function Pricing() {
 
         <div className={styles.pay}>
           <span className={styles.payLabel}>
-            <IconShield width={15} height={15} /> Secure, SSL-encrypted checkout
+            <IconShield width={15} height={15} /> Order over WhatsApp · pay by card, PayPal or crypto
           </span>
           <div className={styles.payMethods}>
             {PAY_METHODS.map((m) => (

@@ -9,13 +9,13 @@ const STEPS = [
   },
   {
     step: 'Step 2',
-    title: 'Complete Your Payment',
-    desc: 'Complete your secure, SSL-encrypted checkout with card, PayPal, and more.',
+    title: 'Confirm Your Order on WhatsApp',
+    desc: 'Send us your order on WhatsApp and pay by card, PayPal, or crypto — no payment is taken on this site.',
   },
   {
     step: 'Step 3',
-    title: 'Upon Successful Payment',
-    desc: 'Receive your instant activation and login credentials by email right away.',
+    title: 'Get Instant Activation',
+    desc: 'Receive your login credentials by email within minutes of your order being confirmed.',
   },
   {
     step: 'Step 4',
@@ -26,12 +26,12 @@ const STEPS = [
 
 export default function HowItWorks() {
   return (
-    <section id="install" className={styles.section}>
+    <section id="how-it-works" className={styles.section}>
       <div className={`vt-container ${styles.inner}`}>
         <header className={styles.head} data-reveal>
           <span className="vt-eyebrow">How it works</span>
-          <h2 className="vt-section-title">Up and running in four steps</h2>
-          <p className="vt-section-sub">From checkout to streaming in just a few minutes.</p>
+          <h2 className="vt-section-title">How to Set Up IPTV in 4 Steps</h2>
+          <p className="vt-section-sub">From order to streaming in just a few minutes.</p>
         </header>
 
         <ol className={styles.track}>

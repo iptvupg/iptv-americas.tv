@@ -39,7 +39,7 @@ const ITEMS = [
 
 export default function Features() {
   return (
-    <section id="blog" className={styles.section}>
+    <section id="features" className={styles.section}>
       <div className={`vt-container ${styles.inner}`}>
         <header className={styles.head} data-reveal>
           <span className="vt-eyebrow">Features</span>

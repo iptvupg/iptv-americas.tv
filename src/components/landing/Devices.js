@@ -29,8 +29,15 @@ function DeviceItem({ name, Icon, hidden }) {
 
 export default function Devices() {
   return (
-    <section className={styles.section} aria-label="Supported devices">
+    <section id="devices" className={styles.section} aria-label="Supported devices">
       <div className={styles.glow} aria-hidden="true" />
+      <header className={`vt-container ${styles.head}`} data-reveal>
+        <span className="vt-eyebrow">Compatibility</span>
+        <h2 className="vt-section-title">Supported Devices for IPTV</h2>
+        <p className="vt-section-sub">
+          Stream on Smart TVs, Firestick, Apple TV, Roku, MAG, mobile, and computers.
+        </p>
+      </header>
       <div className={styles.marquee}>
         <div className={styles.track}>
           {DEVICES.map((d) => (

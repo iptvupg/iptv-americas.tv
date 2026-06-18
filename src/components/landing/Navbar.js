@@ -7,10 +7,10 @@ import styles from './Navbar.module.css';
 const LINKS = [
   { label: 'Home', href: '#home' },
   { label: 'Pricing', href: '#pricing' },
-  { label: 'Features', href: '#blog' },
-  { label: 'How It Works', href: '#install' },
-  { label: 'Reviews', href: '#reviews' },
-  { label: 'FAQ', href: '#contact' },
+  { label: 'Features', href: '#features' },
+  { label: 'Devices', href: '#devices' },
+  { label: 'How It Works', href: '#how-it-works' },
+  { label: 'FAQ', href: '#faq' },
 ];
 
 function Logo() {

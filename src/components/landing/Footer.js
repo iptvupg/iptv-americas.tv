@@ -6,17 +6,17 @@ const COLUMNS = [
     title: 'Product',
     links: [
       { label: 'Pricing', href: '#pricing' },
-      { label: 'Features', href: '#blog' },
-      { label: 'How It Works', href: '#install' },
-      { label: 'Reviews', href: '#reviews' },
+      { label: 'Features', href: '#features' },
+      { label: 'Devices', href: '#devices' },
+      { label: 'How It Works', href: '#how-it-works' },
     ],
   },
   {
     title: 'Company',
     links: [
-      { label: 'FAQ', href: '#contact' },
-      { label: 'Reseller Program', href: '#contact' },
-      { label: 'Contact us', href: '#contact' },
+      { label: 'About', href: '#about' },
+      { label: 'FAQ', href: '#faq' },
+      { label: 'Contact us', href: '#about' },
     ],
   },
   {
@@ -30,10 +30,10 @@ const COLUMNS = [
 ];
 
 const SOCIAL = [
-  { label: 'X', glyph: 'X' },
-  { label: 'Facebook', glyph: 'f' },
-  { label: 'LinkedIn', glyph: 'in' },
-  { label: 'YouTube', glyph: '▶' },
+  { label: 'X', glyph: 'X', href: '#contact' },
+  { label: 'Facebook', glyph: 'f', href: '#contact' },
+  { label: 'LinkedIn', glyph: 'in', href: 'https://www.linkedin.com/company/iptv-americas' },
+  { label: 'YouTube', glyph: '▶', href: '#contact' },
 ];
 
 export default function Footer() {
@@ -50,11 +50,19 @@ export default function Footer() {
             films, and live sports — on every device you own.
           </p>
           <div className={styles.social}>
-            {SOCIAL.map((s) => (
-              <a key={s.label} href="#contact" aria-label={s.label}>
-                {s.glyph}
-              </a>
-            ))}
+            {SOCIAL.map((s) => {
+              const external = s.href.startsWith('http');
+              return (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  aria-label={s.label}
+                  {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                >
+                  {s.glyph}
+                </a>
+              );
+            })}
           </div>
         </div>
 
@@ -74,7 +82,7 @@ export default function Footer() {
 
       <div className={styles.bottom}>
         <span>© 2026 IPTV Americas. All rights reserved.</span>
-        <span className={styles.payNote}>Secure, SSL-encrypted checkout</span>
+        <span className={styles.payNote}>Order over WhatsApp · pay by card, PayPal or crypto</span>
       </div>
     </footer>
   );
