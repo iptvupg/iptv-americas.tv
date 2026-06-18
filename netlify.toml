@@ -4,3 +4,35 @@
 
 [build.environment]
   NODE_VERSION = "20"
+
+# --- Canonical host enforcement (technical SEO) ---
+# Force a single canonical origin: https://www.iptv-americas.tv
+# All other host/scheme combinations 301-redirect to it so search engines
+# index one URL and link equity isn't split across variants.
+
+# Apex over HTTPS -> www
+[[redirects]]
+  from = "https://iptv-americas.tv/*"
+  to = "https://www.iptv-americas.tv/:splat"
+  status = 301
+  force = true
+
+# Apex over HTTP -> www HTTPS
+[[redirects]]
+  from = "http://iptv-americas.tv/*"
+  to = "https://www.iptv-americas.tv/:splat"
+  status = 301
+  force = true
+
+# www over HTTP -> www HTTPS
+[[redirects]]
+  from = "http://www.iptv-americas.tv/*"
+  to = "https://www.iptv-americas.tv/:splat"
+  status = 301
+  force = true
+
+# Tell browsers to always use HTTPS for this host going forward.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
