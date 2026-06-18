@@ -3,17 +3,6 @@ import { IconArrow, IconStar, IconShield, IconUptime } from './Icons';
 import { useCheckout } from './CheckoutContext';
 import styles from './Hero.module.css';
 
-const BRANDS = [
-  { name: 'Netflix', src: 'https://image.tmdb.org/t/p/w200/wwemzKWzjKYJFfCeiB57q3r4Bcm.png' },
-  { name: 'Prime Video', src: 'https://image.tmdb.org/t/p/w200/w7HfLNm9CWwRmAMU58udl2L7We7.png' },
-  { name: 'HBO Max', src: 'https://image.tmdb.org/t/p/w200/tuomPhY2UtuPTqqFnKMVHvSb724.png' },
-  { name: 'Disney+', src: 'https://image.tmdb.org/t/p/w200/gJ8VX6JSu3ciXHuC2dDGAo2lvwM.png' },
-  { name: 'Apple TV+', src: 'https://image.tmdb.org/t/p/w200/4KAy34EHvRM25Ih8wb82AuGU7zJ.png' },
-  { name: 'AMC', src: 'https://image.tmdb.org/t/p/w200/pmvRmATOCaDykE6JrVoeYxlFHw3.png' },
-  { name: 'Paramount+', src: 'https://image.tmdb.org/t/p/w200/wFVDi1bYoyriigHFKIRSdJ9l8kD.png' },
-  { name: 'Hulu', src: 'https://image.tmdb.org/t/p/w200/pqUTCleNUiTLAVlelGxUgWn1ELh.png' },
-];
-
 const TRUST = [
   { icon: IconStar, label: '4.9/5 from 2,000+ reviews' },
   { icon: IconUptime, label: 'Instant activation in minutes' },
@@ -62,17 +51,6 @@ export default function Hero() {
             </li>
           ))}
         </ul>
-
-        <div className={styles.brandsWrap}>
-          <span className={styles.brandsLabel}>All your favorite platforms, one subscription</span>
-          <div className={styles.brands}>
-            {BRANDS.map((b) => (
-              <span key={b.name} className={styles.brand}>
-                <img src={b.src} alt={b.name} loading="lazy" />
-              </span>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

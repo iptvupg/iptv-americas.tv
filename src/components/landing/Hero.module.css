@@ -127,46 +127,6 @@
   color: var(--vt-purple-400);
 }
 
-/* Brand row */
-.brandsWrap {
-  margin-top: var(--vt-space-16);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--vt-space-6);
-}
-.brandsLabel {
-  font-size: var(--vt-fs-xs);
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--vt-text-dim);
-}
-.brands {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(24px, 4vw, 48px);
-}
-.brand {
-  display: inline-flex;
-  align-items: center;
-  opacity: 0.55;
-  filter: grayscale(1);
-  transition: opacity var(--vt-base), filter var(--vt-base);
-}
-.brand img {
-  display: block;
-  height: var(--vt-icon-md);
-  width: auto;
-  object-fit: contain;
-}
-.brand:hover {
-  opacity: 1;
-  filter: grayscale(0);
-}
-
 @media (max-width: 768px) {
   .hero {
     padding: var(--vt-space-32) 0 var(--vt-space-12);
@@ -174,49 +134,5 @@
   .spotlight {
     width: 720px;
     top: -280px;
-  }
-  .brandsWrap {
-    margin-top: var(--vt-space-12);
-  }
-}
-
-/* Small phones: a wrapping logo cloud looks accidental. Make it a single
-   horizontal strip that scrolls, with edge fades hinting there's more —
-   reads as a deliberate "works with" rail rather than leftover logos. */
-@media (max-width: 640px) {
-  .brands {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    gap: var(--vt-space-8);
-    width: 100%;
-    margin-inline: calc(-1 * var(--vt-gutter));
-    padding-inline: var(--vt-gutter);
-    overflow-x: auto;
-    scroll-snap-type: x proximity;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent 0,
-      #000 var(--vt-gutter),
-      #000 calc(100% - var(--vt-gutter)),
-      transparent 100%
-    );
-    mask-image: linear-gradient(
-      to right,
-      transparent 0,
-      #000 var(--vt-gutter),
-      #000 calc(100% - var(--vt-gutter)),
-      transparent 100%
-    );
-  }
-  .brands::-webkit-scrollbar {
-    display: none;
-  }
-  .brand {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-    /* Logos read clearly without hover on touch. */
-    opacity: 0.7;
   }
 }
