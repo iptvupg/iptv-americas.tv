@@ -24,7 +24,7 @@ const config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/',
 
-  organizationName: 'iptvupg', // GitHub org/user name.
+  organizationName: 'IPTV Americas', // GitHub org/user name.
   projectName: 'iptv-americas.tv', // Repo name.
 
   onBrokenLinks: 'throw',
