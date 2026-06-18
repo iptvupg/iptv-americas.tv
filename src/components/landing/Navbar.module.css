@@ -209,8 +209,8 @@
 }
 
 /* Very small phones: the logo + inline CTA + burger no longer fit on one
-   row. Drop the header's duplicate CTA — the always-visible sticky buy-bar
-   and the in-menu button keep the primary action one tap away. */
+   row. Drop the header's duplicate CTA — the in-menu button keeps the
+   primary action one tap away. */
 @media (max-width: 400px) {
   .renew {
     display: none;

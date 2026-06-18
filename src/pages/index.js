@@ -17,7 +17,6 @@ import Footer from '@site/src/components/landing/Footer';
 import Reveal from '@site/src/components/landing/Reveal';
 import { CheckoutProvider } from '@site/src/components/landing/CheckoutContext';
 import CheckoutModal from '@site/src/components/landing/CheckoutModal';
-import StickyCta from '@site/src/components/landing/StickyCta';
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -45,7 +44,6 @@ export default function Home() {
         </main>
         <Footer />
         <CheckoutModal />
-        <StickyCta />
       </CheckoutProvider>
     </Layout>
   );
