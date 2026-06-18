@@ -4,7 +4,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import Navbar from '@site/src/components/landing/Navbar';
 import Hero from '@site/src/components/landing/Hero';
-import Showcase from '@site/src/components/landing/Showcase';
 import HowItWorks from '@site/src/components/landing/HowItWorks';
 import Devices from '@site/src/components/landing/Devices';
 import Pricing from '@site/src/components/landing/Pricing';
@@ -35,7 +34,6 @@ export default function Home() {
           <Pricing />
           <Stats />
           <Devices />
-          <Showcase />
           <Features />
           <HowItWorks />
           <Testimonials />
