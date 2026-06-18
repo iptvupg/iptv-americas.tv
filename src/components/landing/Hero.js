@@ -20,9 +20,9 @@ export default function Hero() {
         <span className="vt-eyebrow">Premium IPTV · 30,000+ channels</span>
 
         <h1 className={styles.title}>
-          Every channel, every match,
+          Premium IPTV — every channel, every match,
           <br />
-          <span className={styles.accent}>every movie — in 4K</span>
+          <span className={styles.accent}>every movie in 4K</span>
         </h1>
 
         <p className={styles.sub}>

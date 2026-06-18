@@ -22,9 +22,9 @@ const COLUMNS = [
   {
     title: 'Legal',
     links: [
-      { label: 'Refund Policy', href: '#contact' },
-      { label: 'Terms of Service', href: '#contact' },
-      { label: 'Privacy Policy', href: '#contact' },
+      { label: 'Refund Policy', href: '/refund' },
+      { label: 'Terms of Service', href: '/terms' },
+      { label: 'Privacy Policy', href: '/privacy' },
     ],
   },
 ];
