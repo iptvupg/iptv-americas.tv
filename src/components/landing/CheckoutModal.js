@@ -4,8 +4,8 @@ import { IconClose, IconShield, IconWhatsapp } from './Icons';
 import { useCheckout } from './CheckoutContext';
 import styles from './CheckoutModal.module.css';
 
-// TODO: replace with the real WhatsApp business number (digits only, incl. country code).
-const WHATSAPP_NUMBER = '10000000000';
+// WhatsApp business number, digits only incl. country code (+44 7848 197761).
+const WHATSAPP_NUMBER = '447848197761';
 
 const DEFAULT_PLAN = { duration: '6 Months', total: 60 };
 
