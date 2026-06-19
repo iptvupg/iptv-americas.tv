@@ -183,6 +183,43 @@
   line-height: 1.65;
 }
 
+/* What to expect */
+.expect {
+  margin: var(--vt-space-10) auto 0;
+  width: 100%;
+  max-width: 920px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--vt-space-4);
+}
+.expectCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vt-space-2);
+  padding: var(--vt-space-8);
+  border-radius: var(--vt-r-xl);
+  background: linear-gradient(180deg, var(--vt-surface) 0%, var(--vt-bg-2) 100%);
+  border: 1px solid var(--vt-glass-border);
+  box-shadow: inset 0 1px 0 var(--vt-glass-highlight), var(--vt-shadow-md);
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .expectCard {
+    background: var(--vt-glass);
+    backdrop-filter: var(--vt-glass-blur);
+  }
+}
+.expectTitle {
+  margin: 0;
+  font-size: var(--vt-fs-body-lg);
+  font-weight: 700;
+}
+.expectDesc {
+  margin: 0;
+  color: var(--vt-text-muted);
+  font-size: var(--vt-fs-sm);
+  line-height: 1.7;
+}
+
 /* FAQ */
 .faq {
   margin: var(--vt-space-10) auto 0;
@@ -276,6 +313,9 @@
     grid-template-columns: 1fr;
   }
   .included {
+    grid-template-columns: 1fr;
+  }
+  .expect {
     grid-template-columns: 1fr;
   }
 }

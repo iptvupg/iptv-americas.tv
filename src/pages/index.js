@@ -28,9 +28,23 @@ const STRUCTURED_DATA = {
       '@id': `${SITE_URL}/#organization`,
       name: 'IPTV Americas',
       url: SITE_URL,
-      logo: `${SITE_URL}/img/logo.svg`,
+      logo: {
+        '@type': 'ImageObject',
+        '@id': `${SITE_URL}/#logo`,
+        url: `${SITE_URL}/img/IPTV-Americas-logo.png`,
+        width: 942,
+        height: 265,
+        caption: 'IPTV Americas',
+      },
       description:
         'Premium IPTV service with 54,000+ live channels and 120,000+ movies & series in 4K across every device.',
+      sameAs: ['https://www.linkedin.com/company/iptv-americas'],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer support',
+        telephone: '+44-7848-197761',
+        availableLanguage: ['English', 'Spanish'],
+      },
     },
     {
       '@type': 'WebSite',
@@ -41,10 +55,18 @@ const STRUCTURED_DATA = {
       inLanguage: 'en',
     },
     {
+      '@type': 'BreadcrumbList',
+      '@id': `${SITE_URL}/#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'IPTV Americas', item: `${SITE_URL}/` },
+      ],
+    },
+    {
       '@type': 'Product',
       '@id': `${SITE_URL}/#product`,
       name: 'IPTV Americas Subscription',
       brand: { '@id': `${SITE_URL}/#organization` },
+      image: [`${SITE_URL}/img/og-image.jpg`],
       description:
         '54,000+ live TV channels and 120,000+ movies & series in 4K, with all sports, EPG, catch-up and 24/7 support. Works on Smart TV, Firestick, phone, tablet and PC.',
       offers: [

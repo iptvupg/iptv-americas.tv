@@ -12,10 +12,19 @@ export default function WhatIsIptv() {
 
         <p className={styles.answer} data-reveal>
           IPTV (Internet Protocol Television) delivers live TV channels and on-demand
-          movies and series over your internet connection instead of cable or satellite.
-          With IPTV Americas, you stream 54,000+ live channels and 120,000+ titles in HD
-          and 4K on any device — Smart TV, Firestick, phone, tablet, or PC — with no cable
-          box and no long-term contract.
+          movies and series over a standard internet connection instead of a cable line
+          or satellite dish. Rather than broadcasting one fixed signal to everyone, IPTV
+          streams each program to your device on request, so you can watch live channels,
+          catch up on recent shows, and start movies from a library whenever you want.
+          Because it runs over the internet, it works on the devices you already own and
+          needs no separate cable box, dish, or aerial.
+        </p>
+        <p className={styles.answer} data-reveal>
+          With IPTV Americas, you stream 54,000+ live channels and 120,000+ on-demand
+          titles in HD and 4K across Smart TVs, Amazon Firestick, Apple TV, phones,
+          tablets, and computers. There is no long-term contract and no equipment to rent —
+          plans are billed once, activation is fast, and every subscription is backed by a
+          30-day money-back guarantee.
         </p>
       </div>
     </section>

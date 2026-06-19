@@ -6,7 +6,7 @@ const ITEMS = [
   { icon: IconWrench, label: 'Free Installation', desc: 'We set you up and send a step-by-step guide.' },
   { icon: Icon4k, label: '4K Ultra HD', desc: 'Crystal-clear streams with zero buffering.' },
   { icon: IconDevices, label: 'Multi-Device', desc: 'Watch on TV, phone, tablet, and box.' },
-  { icon: IconUptime, label: '99.9% Uptime', desc: 'Reliable servers you can count on.' },
+  { icon: IconUptime, label: 'Reliable Servers', desc: 'Stable, high-capacity servers you can count on.' },
   { icon: IconHeadset, label: '24/7 Support', desc: 'Real humans, responding in minutes.' },
 ];
 

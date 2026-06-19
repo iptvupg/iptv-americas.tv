@@ -39,6 +39,25 @@ const STEPS = [
   },
 ];
 
+const EXPECT = [
+  {
+    title: 'The complete library, unlocked',
+    desc: 'Your trial is not a cut-down demo. You get the same lineup as a paid plan — all 54,000+ live channels and 120,000+ on-demand movies and series, including sports, news, and international content, in HD, 4K, and SD where available.',
+  },
+  {
+    title: 'Set up in a few minutes',
+    desc: 'After you message us on WhatsApp, we send your trial login and a short setup guide. Enter the details into your preferred app — Smart TV, Amazon Firestick, Apple TV, Android, iPhone, iPad, or PC — and start watching. There is nothing to install on our end and no card to enter.',
+  },
+  {
+    title: 'Test it on your own setup',
+    desc: 'The point of the trial is to see how the service performs on your TV, your devices, and your internet connection before you decide. Around 15 Mbps is comfortable for HD and roughly 25 Mbps or higher is recommended for smooth 4K. Try the channels and titles you actually watch.',
+  },
+  {
+    title: 'What happens after 24 hours',
+    desc: 'When the 24 hours end, the trial simply stops — there is no auto-charge and no card on file, so nothing happens unless you choose to continue. If you like it, pick any plan and keep your setup. Every paid plan is also backed by a 30-day money-back guarantee.',
+  },
+];
+
 const FAQ = [
   {
     q: 'Is the IPTV free trial really free?',
@@ -62,15 +81,41 @@ const FAQ = [
   },
 ];
 
+const PAGE_URL = `${SITE_URL}/iptv-free-trial/`;
+
 const STRUCTURED_DATA = {
   '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  '@id': `${SITE_URL}/iptv-free-trial#faq`,
-  mainEntity: FAQ.map((item) => ({
-    '@type': 'Question',
-    name: item.q,
-    acceptedAnswer: { '@type': 'Answer', text: item.a },
-  })),
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${PAGE_URL}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: 'IPTV Free Trial', item: PAGE_URL },
+      ],
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${PAGE_URL}#webpage`,
+      url: PAGE_URL,
+      name: 'IPTV Free Trial — 24-Hour Full Access, No Card',
+      description:
+        'Try IPTV free for 24 hours — full access to 54,000+ live channels and 120,000+ on-demand titles in true 4K. No form, no card, no commitment.',
+      inLanguage: 'en',
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+      about: { '@id': `${SITE_URL}/#organization` },
+      breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${PAGE_URL}#faq`,
+      mainEntity: FAQ.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.a },
+      })),
+    },
+  ],
 };
 
 export default function IptvFreeTrial() {
@@ -156,6 +201,27 @@ export default function IptvFreeTrial() {
                   </li>
                 ))}
               </ol>
+            </div>
+          </section>
+
+          <section className={styles.section}>
+            <div className={`vt-container ${styles.sectionInner}`}>
+              <header className={styles.head} data-reveal>
+                <span className="vt-eyebrow">What to expect</span>
+                <h2 className="vt-section-title">What to expect during your IPTV free trial</h2>
+                <p className="vt-section-sub">
+                  The trial is designed to show you exactly what a paid subscription feels
+                  like — full access, your own devices, and no strings attached.
+                </p>
+              </header>
+              <div className={styles.expect} data-reveal>
+                {EXPECT.map((item) => (
+                  <article key={item.title} className={styles.expectCard}>
+                    <h3 className={styles.expectTitle}>{item.title}</h3>
+                    <p className={styles.expectDesc}>{item.desc}</p>
+                  </article>
+                ))}
+              </div>
             </div>
           </section>
 

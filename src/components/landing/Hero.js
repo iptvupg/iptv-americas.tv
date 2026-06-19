@@ -1,10 +1,10 @@
 import React from 'react';
-import { IconArrow, IconStar, IconShield, IconUptime } from './Icons';
+import { IconArrow, IconSpark, IconShield, IconUptime } from './Icons';
 import { useCheckout } from './CheckoutContext';
 import styles from './Hero.module.css';
 
 const TRUST = [
-  { icon: IconStar, label: '4.9/5 from 2,000+ reviews' },
+  { icon: IconSpark, label: 'Free 24-hour trial' },
   { icon: IconUptime, label: 'Instant activation in minutes' },
   { icon: IconShield, label: '30-day money-back guarantee' },
 ];

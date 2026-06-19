@@ -27,6 +27,10 @@ const config = {
   organizationName: 'IPTV Americas', // GitHub org/user name.
   projectName: 'iptv-americas.tv', // Repo name.
 
+  // Emit pages as /path/ so canonical tags and sitemap <loc> match the
+  // trailing-slash URLs Netlify actually serves (avoids 301 + canonical mismatch).
+  trailingSlash: true,
+
   onBrokenLinks: 'throw',
 
   headTags: [

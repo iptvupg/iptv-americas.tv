@@ -31,10 +31,7 @@ const COLUMNS = [
 ];
 
 const SOCIAL = [
-  { label: 'X', glyph: 'X', href: '#contact' },
-  { label: 'Facebook', glyph: 'f', href: '#contact' },
   { label: 'LinkedIn', glyph: 'in', href: 'https://www.linkedin.com/company/iptv-americas' },
-  { label: 'YouTube', glyph: '▶', href: '#contact' },
 ];
 
 export default function Footer() {

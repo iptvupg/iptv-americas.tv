@@ -4,7 +4,7 @@ import styles from './Stats.module.css';
 const STATS = [
   { value: '54,000+', label: 'Live TV channels' },
   { value: '120K+', label: 'Movies & series' },
-  { value: '99.9%', label: 'Streaming uptime' },
+  { value: '4K', label: 'Ultra HD streaming' },
   { value: '24/7', label: 'Expert support' },
 ];
 
