@@ -31,6 +31,13 @@ const config = {
 
   headTags: [
     {
+      tagName: 'meta',
+      attributes: {
+        name: 'google-site-verification',
+        content: 'ujlGhSq48aL0_mUmSmr-reYx24eYgBTeBmcyhMFt0gU',
+      },
+    },
+    {
       tagName: 'link',
       attributes: { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
     },
