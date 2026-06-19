@@ -5,17 +5,17 @@ import { useCheckout } from './CheckoutContext';
 import styles from './Navbar.module.css';
 
 const LINKS = [
-  { label: 'Home', href: '#home' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Features', href: '#features' },
-  { label: 'Devices', href: '#devices' },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Home', href: '/#home' },
+  { label: 'Pricing', href: '/#pricing' },
+  { label: 'Features', href: '/#features' },
+  { label: 'Devices', href: '/#devices' },
+  { label: 'How It Works', href: '/#how-it-works' },
+  { label: 'FAQ', href: '/#faq' },
 ];
 
 function Logo() {
   return (
-    <a className={styles.logo} href="#home" aria-label="IPTV Americas home">
+    <a className={styles.logo} href="/#home" aria-label="IPTV Americas home">
       <span className={styles.logoMark}>IPTV</span>
       <span className={styles.logoBadge}>Americas</span>
     </a>
@@ -48,7 +48,7 @@ export default function Navbar() {
         </ul>
 
         <div className={styles.actions}>
-          <a className={styles.trial} href="#pricing">
+          <a className={styles.trial} href="/#pricing">
             Renew
           </a>
           <button type="button" className={styles.renew} onClick={() => openCheckout()}>

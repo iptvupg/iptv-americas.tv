@@ -5,18 +5,18 @@ const COLUMNS = [
   {
     title: 'Product',
     links: [
-      { label: 'Pricing', href: '#pricing' },
-      { label: 'Features', href: '#features' },
-      { label: 'Devices', href: '#devices' },
-      { label: 'How It Works', href: '#how-it-works' },
+      { label: 'Pricing', href: '/#pricing' },
+      { label: 'Features', href: '/#features' },
+      { label: 'Devices', href: '/#devices' },
+      { label: 'How It Works', href: '/#how-it-works' },
     ],
   },
   {
     title: 'Company',
     links: [
-      { label: 'About', href: '#about' },
-      { label: 'FAQ', href: '#faq' },
-      { label: 'Contact us', href: '#about' },
+      { label: 'About', href: '/#about' },
+      { label: 'FAQ', href: '/#faq' },
+      { label: 'Contact us', href: '/#about' },
     ],
   },
   {
@@ -41,7 +41,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`vt-container ${styles.inner}`}>
         <div className={styles.brand}>
-          <a className={styles.logo} href="#home">
+          <a className={styles.logo} href="/#home">
             <span>IPTV</span>
             <span className={styles.badge}>Americas</span>
           </a>
