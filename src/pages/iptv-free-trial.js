@@ -35,14 +35,14 @@ const STEPS = [
   },
   {
     title: 'Stream for 24 hours',
-    desc: 'Watch the full library on any device. Like it? Pick a plan when you are ready.',
+    desc: 'Watch live channels and on-demand titles on any device. Like it? Pick a plan when you are ready.',
   },
 ];
 
 const EXPECT = [
   {
-    title: 'The complete library, unlocked',
-    desc: 'Your trial is not a cut-down demo. You get the same lineup as a paid plan — all 54,000+ live channels and 120,000+ on-demand movies and series, including sports, news, and international content, in HD, 4K, and SD where available.',
+    title: 'Full trial access, no demo',
+    desc: 'Your trial is not a cut-down demo. You get the same lineup as a paid plan — 54,000+ live channels and 120,000+ on-demand movies and series, including news, sports, and international content, in HD, 4K, and SD where available.',
   },
   {
     title: 'Set up in a few minutes',
@@ -73,7 +73,7 @@ const FAQ = [
   },
   {
     q: 'What can I watch during the trial?',
-    a: 'Everything: 54,000+ live channels and 120,000+ on-demand titles, in up to true 4K, on your own TV and devices.',
+    a: 'The full paid lineup: 54,000+ live channels and 120,000+ on-demand titles, in up to true 4K, on your own TV and devices.',
   },
   {
     q: 'How do I start the free trial?',
@@ -174,7 +174,7 @@ export default function IptvFreeTrial() {
             <div className={`vt-container ${styles.sectionInner}`}>
               <header className={styles.head} data-reveal>
                 <span className="vt-eyebrow">What you get</span>
-                <h2 className="vt-section-title">Everything unlocked for 24 hours</h2>
+                <h2 className="vt-section-title">Full access for 24 hours</h2>
               </header>
               <ul className={styles.included} data-reveal>
                 {INCLUDED.map((item) => (

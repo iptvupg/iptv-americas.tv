@@ -19,8 +19,8 @@ const STEPS = [
   },
   {
     step: 'Step 4',
-    title: 'Enjoy Unlimited Access',
-    desc: 'Stream unlimited channels, films, and live sports on any device, anytime.',
+    title: 'Start Streaming Instantly',
+    desc: 'Stream live channels, movies, and sports coverage on any device, anytime.',
   },
 ];
 

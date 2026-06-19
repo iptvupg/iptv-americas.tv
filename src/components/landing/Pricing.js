@@ -16,14 +16,14 @@ const MONTHLY_BASE = 16; // 1-month reference rate
 const FEATURES = [
   '4K, HD, & SD Quality',
   '54,000+ Live TV Channels',
-  'All Sports Channels',
+  'Live Sports Coverage',
   '120,000+ Movies & Series',
   'Anti-Freezing Technology',
   'Catch-Up (Up to 4 Days)',
   'TV Guide (EPG)',
-  'Pay-Per-View (PPV)',
+  'Premium Live Events',
   'Built-in VPN Protection',
-  'Adult Channels (Optional)',
+  'Optional Adult Content',
   '24/7 Technical Support',
 ];
 
@@ -52,7 +52,7 @@ export default function Pricing() {
           <span className="vt-eyebrow">Pricing</span>
           <h2 className="vt-section-title">IPTV Subscription Plans &amp; Pricing</h2>
           <p className="vt-section-sub">
-            Every plan unlocks the full library — pick the term that suits you.
+            Every plan includes our broad channel selection — pick the term that suits you.
             Billed once, no auto-renewal, cancel anytime.
           </p>
         </header>
