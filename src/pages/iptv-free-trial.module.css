@@ -1,0 +1,281 @@
+.main {
+  /* Clear the fixed navbar */
+  padding-top: clamp(96px, 12vw, 140px);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  padding: var(--vt-space-12) 0 var(--vt-space-10);
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.spotlight {
+  position: absolute;
+  top: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 520px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(124, 58, 237, 0.16), transparent 64%);
+  z-index: -1;
+}
+
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--vt-space-4);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--vt-fs-h1);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.tagline {
+  margin: 0;
+  font-size: var(--vt-fs-body-lg);
+  font-weight: 600;
+  color: var(--vt-purple-300);
+  letter-spacing: 0.01em;
+}
+
+.lead {
+  margin: var(--vt-space-2) 0 0;
+  max-width: 60ch;
+  color: var(--vt-text-muted);
+  font-size: var(--vt-fs-body-lg);
+  line-height: 1.7;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--vt-space-3);
+  margin-top: var(--vt-space-4);
+}
+
+.trust {
+  list-style: none;
+  margin: var(--vt-space-4) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--vt-space-5);
+}
+.trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--vt-space-2);
+  color: var(--vt-text-muted);
+  font-size: var(--vt-fs-sm);
+  font-weight: 500;
+}
+.trust svg {
+  color: var(--vt-purple-300);
+}
+
+/* Generic section */
+.section {
+  padding: var(--vt-section-y) 0 0;
+}
+
+.sectionInner {
+  display: flex;
+  flex-direction: column;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--vt-space-4);
+}
+
+/* What you get */
+.included {
+  list-style: none;
+  margin: var(--vt-space-10) auto 0;
+  padding: 0;
+  width: 100%;
+  max-width: 760px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--vt-space-3);
+}
+.included li {
+  display: flex;
+  align-items: center;
+  gap: var(--vt-space-3);
+  padding: var(--vt-space-4) var(--vt-space-5);
+  border-radius: var(--vt-r-lg);
+  background: linear-gradient(180deg, var(--vt-surface) 0%, var(--vt-bg-2) 100%);
+  border: 1px solid var(--vt-glass-border);
+  box-shadow: inset 0 1px 0 var(--vt-glass-highlight), var(--vt-shadow-md);
+  color: var(--vt-text);
+  font-weight: 500;
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .included li {
+    background: var(--vt-glass);
+    backdrop-filter: var(--vt-glass-blur);
+  }
+}
+.included svg {
+  flex: none;
+  color: var(--vt-purple-300);
+}
+
+/* How it works */
+.steps {
+  list-style: none;
+  counter-reset: step;
+  margin: var(--vt-space-10) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--vt-space-4);
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vt-space-3);
+  padding: var(--vt-space-8);
+  border-radius: var(--vt-r-xl);
+  background: linear-gradient(180deg, var(--vt-surface) 0%, var(--vt-bg-2) 100%);
+  border: 1px solid var(--vt-glass-border);
+  box-shadow: inset 0 1px 0 var(--vt-glass-highlight), var(--vt-shadow-md);
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .step {
+    background: var(--vt-glass);
+    backdrop-filter: var(--vt-glass-blur);
+  }
+}
+.num {
+  font-size: var(--vt-fs-h3);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: var(--vt-grad-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+.stepTitle {
+  margin: 0;
+  font-size: var(--vt-fs-body-lg);
+  font-weight: 700;
+}
+.stepDesc {
+  margin: 0;
+  color: var(--vt-text-muted);
+  font-size: var(--vt-fs-sm);
+  line-height: 1.65;
+}
+
+/* FAQ */
+.faq {
+  margin: var(--vt-space-10) auto 0;
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--vt-space-3);
+}
+.faqItem {
+  border-radius: var(--vt-r-lg);
+  border: 1px solid var(--vt-glass-border);
+  background: linear-gradient(180deg, var(--vt-surface) 0%, var(--vt-bg-2) 100%);
+  box-shadow: inset 0 1px 0 var(--vt-glass-highlight), var(--vt-shadow-md);
+  overflow: hidden;
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .faqItem {
+    background: var(--vt-glass);
+    backdrop-filter: var(--vt-glass-blur);
+  }
+}
+.faqQ {
+  list-style: none;
+  cursor: pointer;
+  padding: var(--vt-space-5) var(--vt-space-6);
+  font-size: var(--vt-fs-body-lg);
+  font-weight: 600;
+  color: var(--vt-text);
+}
+.faqQ::-webkit-details-marker {
+  display: none;
+}
+.faqQ::after {
+  content: '+';
+  float: right;
+  color: var(--vt-purple-300);
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+.faqItem[open] .faqQ::after {
+  transform: rotate(45deg);
+}
+.faqA {
+  margin: 0;
+  padding: 0 var(--vt-space-6) var(--vt-space-5);
+  color: var(--vt-text-muted);
+  font-size: var(--vt-fs-body-lg);
+  line-height: 1.7;
+}
+
+/* CTA band */
+.ctaBand {
+  margin-top: var(--vt-section-y);
+  padding: var(--vt-section-y) 0;
+}
+.ctaInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--vt-space-4);
+  padding: clamp(var(--vt-space-8), 6vw, var(--vt-space-12));
+  border-radius: var(--vt-r-xl);
+  background: linear-gradient(180deg, var(--vt-surface) 0%, var(--vt-bg-2) 100%);
+  border: 1px solid var(--vt-glass-border);
+  box-shadow: inset 0 1px 0 var(--vt-glass-highlight), var(--vt-shadow-md);
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .ctaInner {
+    background: var(--vt-glass);
+    backdrop-filter: var(--vt-glass-blur);
+  }
+}
+.ctaTitle {
+  margin: 0;
+  font-size: var(--vt-fs-h3);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.ctaSub {
+  margin: 0;
+  max-width: 52ch;
+  color: var(--vt-text-muted);
+  font-size: var(--vt-fs-body-lg);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+  .included {
+    grid-template-columns: 1fr;
+  }
+}

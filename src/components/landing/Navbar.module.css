@@ -32,25 +32,12 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: var(--vt-space-1);
-  font-weight: 800;
-  font-size: var(--vt-fs-h4);
-  letter-spacing: -0.02em;
-  color: var(--vt-text);
   text-decoration: none;
 }
-.logoMark {
-  color: var(--vt-text);
-}
-.logoBadge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2px var(--vt-space-2);
-  border-radius: 8px;
-  background: var(--vt-grad-accent);
-  color: #fff;
-  box-shadow: var(--vt-shadow-btn);
+.logoImg {
+  height: 40px;
+  width: auto;
+  display: block;
 }
 
 /* Links */
@@ -200,8 +187,8 @@
 }
 
 @media (max-width: 480px) {
-  .logo {
-    font-size: var(--vt-fs-h5);
+  .logoImg {
+    height: 34px;
   }
   .renew {
     padding: var(--vt-space-2) var(--vt-space-4);

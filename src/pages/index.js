@@ -30,7 +30,7 @@ const STRUCTURED_DATA = {
       url: SITE_URL,
       logo: `${SITE_URL}/img/logo.svg`,
       description:
-        'Premium IPTV service with 30,000+ live channels and 150,000+ movies & series in 4K across every device.',
+        'Premium IPTV service with 54,000+ live channels and 120,000+ movies & series in 4K across every device.',
     },
     {
       '@type': 'WebSite',
@@ -46,7 +46,7 @@ const STRUCTURED_DATA = {
       name: 'IPTV Americas Subscription',
       brand: { '@id': `${SITE_URL}/#organization` },
       description:
-        '30,000+ live TV channels and 150,000+ movies & series in 4K, with all sports, EPG, catch-up and 24/7 support. Works on Smart TV, Firestick, phone, tablet and PC.',
+        '54,000+ live TV channels and 120,000+ movies & series in 4K, with all sports, EPG, catch-up and 24/7 support. Works on Smart TV, Firestick, phone, tablet and PC.',
       offers: [
         { '@type': 'Offer', name: '1 Month', price: '16', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: `${SITE_URL}/#pricing` },
         { '@type': 'Offer', name: '3 Months', price: '39', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: `${SITE_URL}/#pricing` },
@@ -139,7 +139,7 @@ export default function Home() {
   return (
     <Layout
       title="Best IPTV Service in USA, Canada & Latin America"
-      description="Watch live TV, sports & movies in HD & 4K on any device. 30,000+ channels, instant activation, no contract — get your IPTV plan today, risk-free for 30 days."
+      description="Watch live TV, sports & movies in HD & 4K on any device. 54,000+ channels, instant activation, no contract — get your IPTV plan today, risk-free for 30 days."
       noFooter
       wrapperClassName="landing-main"
     >

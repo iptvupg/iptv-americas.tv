@@ -9,6 +9,7 @@ const COLUMNS = [
       { label: 'Features', href: '/#features' },
       { label: 'Devices', href: '/#devices' },
       { label: 'How It Works', href: '/#how-it-works' },
+      { label: 'Free Trial', href: '/iptv-free-trial' },
     ],
   },
   {
@@ -41,9 +42,14 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`vt-container ${styles.inner}`}>
         <div className={styles.brand}>
-          <a className={styles.logo} href="/#home">
-            <span>IPTV</span>
-            <span className={styles.badge}>Americas</span>
+          <a className={styles.logo} href="/" aria-label="IPTV Americas home">
+            <img
+              className={styles.logoImg}
+              src="/img/IPTV-Americas-logo.png"
+              alt="IPTV Americas"
+              width={942}
+              height={265}
+            />
           </a>
           <p className={styles.tagline}>
             Premium streaming, delivered worldwide. Thousands of channels,

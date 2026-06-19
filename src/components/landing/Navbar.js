@@ -16,8 +16,13 @@ const LINKS = [
 function Logo() {
   return (
     <a className={styles.logo} href="/#home" aria-label="IPTV Americas home">
-      <span className={styles.logoMark}>IPTV</span>
-      <span className={styles.logoBadge}>Americas</span>
+      <img
+        className={styles.logoImg}
+        src="/img/IPTV-Americas-logo.png"
+        alt="IPTV Americas"
+        width={942}
+        height={265}
+      />
     </a>
   );
 }

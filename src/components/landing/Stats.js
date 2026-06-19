@@ -2,8 +2,8 @@ import React from 'react';
 import styles from './Stats.module.css';
 
 const STATS = [
-  { value: '30,000+', label: 'Live TV channels' },
-  { value: '150K+', label: 'Movies & series' },
+  { value: '54,000+', label: 'Live TV channels' },
+  { value: '120K+', label: 'Movies & series' },
   { value: '99.9%', label: 'Streaming uptime' },
   { value: '24/7', label: 'Expert support' },
 ];

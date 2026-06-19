@@ -20,17 +20,12 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: var(--vt-space-1);
-  font-weight: 800;
-  font-size: var(--vt-fs-h5);
-  color: var(--vt-text);
   text-decoration: none;
 }
-.badge {
-  padding: 2px var(--vt-space-2);
-  border-radius: 8px;
-  background: var(--vt-grad-purple);
-  color: #fff;
+.logoImg {
+  height: 40px;
+  width: auto;
+  display: block;
 }
 .tagline {
   margin: 0;

@@ -16,7 +16,7 @@ export default function FinalCta() {
       <div className={`vt-container ${styles.inner}`} data-reveal>
         <h2 className={styles.title}>Start streaming in the next five minutes</h2>
         <p className={styles.sub}>
-          30,000+ live channels and 150,000+ movies &amp; series in up to 4K — on every
+          54,000+ live channels and 120,000+ movies &amp; series in up to 4K — on every
           device you own. Pick a plan and your login arrives by email instantly.
         </p>
 

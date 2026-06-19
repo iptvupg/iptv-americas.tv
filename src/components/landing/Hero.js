@@ -17,7 +17,7 @@ export default function Hero() {
       <div className={styles.spotlight} aria-hidden="true" />
 
       <div className={`vt-container ${styles.inner}`}>
-        <span className="vt-eyebrow">Premium IPTV · 30,000+ channels</span>
+        <span className="vt-eyebrow">Premium IPTV · 54,000+ channels</span>
 
         <h1 className={styles.title}>
           Best IPTV Service for
@@ -26,7 +26,7 @@ export default function Hero() {
         </h1>
 
         <p className={styles.sub}>
-          30,000+ live TV channels and 150,000+ movies &amp; series, streaming on every
+          54,000+ live TV channels and 120,000+ movies &amp; series, streaming on every
           device you own — Smart TV, Firestick, phone, tablet and PC. Instant setup,
           no contract.
         </p>

@@ -15,9 +15,9 @@ const MONTHLY_BASE = 16; // 1-month reference rate
 
 const FEATURES = [
   '4K, HD, & SD Quality',
-  '30,000+ Live TV Channels',
+  '54,000+ Live TV Channels',
   'All Sports Channels',
-  '150,000+ Movies & Series',
+  '120,000+ Movies & Series',
   'Anti-Freezing Technology',
   'Catch-Up (Up to 4 Days)',
   'TV Guide (EPG)',

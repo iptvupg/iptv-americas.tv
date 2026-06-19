@@ -9,7 +9,7 @@ const ITEMS = [
   {
     icon: IconLayers,
     title: 'Who we are',
-    body: 'IPTV Americas is a subscription IPTV service streaming 30,000+ live TV channels and 150,000+ movies & series in HD and 4K.',
+    body: 'IPTV Americas is a subscription IPTV service streaming 54,000+ live TV channels and 120,000+ movies & series in HD and 4K.',
   },
   {
     icon: IconDevices,
