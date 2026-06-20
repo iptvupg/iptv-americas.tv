@@ -30,7 +30,12 @@ export default function About() {
         <header className={styles.head} data-reveal>
           <span className="vt-eyebrow">About</span>
           <h2 className="vt-section-title">About IPTV Americas</h2>
+          <p className="vt-section-sub">
+            A subscription IPTV service built for reliable streaming and honest pricing.{' '}
+            <a href="/about/">Learn more about us</a>.
+          </p>
         </header>
+
 
         <div className={styles.grid}>
           {ITEMS.map(({ icon: Icon, title, body }) => (

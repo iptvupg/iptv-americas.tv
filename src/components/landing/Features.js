@@ -7,33 +7,33 @@ import styles from './Features.module.css';
 const ITEMS = [
   {
     icon: IconDevices,
-    title: 'Multi-Device Support',
-    desc: 'Use IPTV Americas subscriptions seamlessly across all your TVs, phones, tablets, and boxes.',
+    title: 'Watch on Every Device',
+    desc: 'One subscription works on Smart TVs, Amazon Firestick, Apple TV, Roku, phones, tablets, and computers — no extra boxes to buy.',
   },
   {
     icon: IconServer,
-    title: 'High Availability Servers',
-    desc: 'Take advantage of our powerful servers to enjoy zero-buffering, premium performance.',
+    title: 'Stable, Buffer-Free Streams',
+    desc: 'Load-balanced servers and anti-freeze technology keep live channels and movies playing smoothly, even at peak times.',
   },
   {
     icon: IconLayers,
-    title: 'Invaluable Content',
-    desc: 'Gain access to premium channels and worldwide VODs, offering the most popular movies, series, and shows.',
+    title: '54,000+ Channels & 120,000+ Titles',
+    desc: 'Live news, sports, and international channels plus a large on-demand library of movies and series in HD and 4K.',
   },
   {
     icon: IconShield,
-    title: 'Money Back Guarantee',
-    desc: "We stand by our subscriptions. If you're not happy, simply request a refund.",
+    title: '30-Day Money-Back Guarantee',
+    desc: 'Try the service risk-free. If it is not the right fit, request a refund within 30 days.',
   },
   {
     icon: IconRefresh,
-    title: 'Free Updates',
-    desc: 'Keep up with our complimentary IPTV updates. Enjoy the latest content and features at no additional cost.',
+    title: 'Free Updates & New Content',
+    desc: 'Channel lineups and the movie library are refreshed regularly at no extra cost — nothing to reinstall.',
   },
   {
     icon: IconWallet,
-    title: '100% Secure Payment',
-    desc: 'Shop with confidence: every transaction is protected through advanced security systems.',
+    title: 'Secure, Flexible Payment',
+    desc: 'Pay by card, PayPal, or crypto through encrypted checkout. Orders are confirmed with our team over WhatsApp.',
   },
 ];
 
@@ -44,11 +44,11 @@ export default function Features() {
         <header className={styles.head} data-reveal>
           <span className="vt-eyebrow">Features</span>
           <h2 className="vt-section-title">
-            Everything you need for perfect entertainment
+            Why choose our IPTV service
           </h2>
           <p className="vt-section-sub">
-            We specialize in offering the best IPTV services with a focus on quality,
-            reliability, and unbeatable value.
+            We focus on stream quality, reliable uptime, and clear pricing — no contracts
+            and no hidden fees.
           </p>
         </header>
 

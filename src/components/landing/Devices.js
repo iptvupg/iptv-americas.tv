@@ -36,6 +36,7 @@ export default function Devices() {
         <h2 className="vt-section-title">Supported Devices for IPTV</h2>
         <p className="vt-section-sub">
           Stream on Smart TVs, Firestick, Apple TV, Roku, MAG, mobile, and computers.
+          New to it? See how to <a href="/iptv-for-firestick/">set up IPTV on Firestick</a>.
         </p>
       </header>
       <div className={styles.marquee}>

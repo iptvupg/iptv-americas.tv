@@ -33,6 +33,10 @@ export default function FinalCta() {
           </a>
         </div>
 
+        <p className={styles.trialNote}>
+          Not ready to buy? <a href="/iptv-free-trial/">Test IPTV free for 24 hours</a> first.
+        </p>
+
         <ul className={styles.points}>
           {POINTS.map(({ icon: Icon, label }) => (
             <li key={label}>

@@ -26,6 +26,11 @@ export default function WhatIsIptv() {
           plans are billed once, activation is fast, and every subscription is backed by a
           30-day money-back guarantee.
         </p>
+        <p className={styles.more} data-reveal>
+          New to streaming? Read our full <a href="/what-is-iptv/">guide to what IPTV is</a>, or
+          jump straight to setup for <a href="/iptv-for-firestick/">IPTV on Firestick</a> and{' '}
+          <a href="/iptv-smarters-pro/">IPTV Smarters Pro</a>.
+        </p>
       </div>
     </section>
   );

@@ -24,3 +24,20 @@
   font-size: var(--vt-fs-body-lg);
   line-height: 1.75;
 }
+
+.more {
+  max-width: 56ch;
+  margin: var(--vt-space-5) 0 0;
+  text-align: center;
+  color: var(--vt-text-muted);
+  font-size: var(--vt-fs-body);
+  line-height: 1.7;
+}
+.more a {
+  color: var(--vt-purple-300);
+  text-decoration: none;
+  font-weight: 600;
+}
+.more a:hover {
+  text-decoration: underline;
+}

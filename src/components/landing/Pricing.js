@@ -23,7 +23,7 @@ const FEATURES = [
   'TV Guide (EPG)',
   'Premium Live Events',
   'Built-in VPN Protection',
-  'Optional Adult Content',
+  'Flexible Content Options',
   '24/7 Technical Support',
 ];
 
@@ -53,7 +53,8 @@ export default function Pricing() {
           <h2 className="vt-section-title">IPTV Subscription Plans &amp; Pricing</h2>
           <p className="vt-section-sub">
             Every plan includes our broad channel selection — pick the term that suits you.
-            Billed once, no auto-renewal, cancel anytime.
+            Billed once, no auto-renewal, cancel anytime. Not sure yet?{' '}
+            <a href="/iptv-free-trial/">Start a free IPTV trial</a> first.
           </p>
         </header>
 

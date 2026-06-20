@@ -3,21 +3,24 @@ import styles from './Footer.module.css';
 
 const COLUMNS = [
   {
-    title: 'Product',
+    title: 'Explore',
     links: [
-      { label: 'Pricing', href: '/#pricing' },
-      { label: 'Features', href: '/#features' },
-      { label: 'Devices', href: '/#devices' },
-      { label: 'How It Works', href: '/#how-it-works' },
-      { label: 'Free Trial', href: '/iptv-free-trial' },
+      { label: 'Pricing', href: '/pricing/' },
+      { label: 'Free Trial', href: '/iptv-free-trial/' },
+      { label: 'What is IPTV?', href: '/what-is-iptv/' },
+      { label: 'IPTV for Firestick', href: '/iptv-for-firestick/' },
+      { label: 'IPTV Smarters Pro', href: '/iptv-smarters-pro/' },
+      { label: 'Troubleshooting', href: '/iptv-troubleshooting/' },
     ],
   },
   {
     title: 'Company',
     links: [
-      { label: 'About', href: '/#about' },
+      { label: 'About', href: '/about/' },
+      { label: 'Features', href: '/#features' },
+      { label: 'Devices', href: '/#devices' },
+      { label: 'How It Works', href: '/#how-it-works' },
       { label: 'FAQ', href: '/#faq' },
-      { label: 'Contact us', href: '/#about' },
     ],
   },
   {

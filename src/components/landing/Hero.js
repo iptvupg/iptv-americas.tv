@@ -28,7 +28,8 @@ export default function Hero() {
         <p className={styles.sub}>
           54,000+ live TV channels and 120,000+ movies &amp; series, streaming on every
           device you own — Smart TV, Firestick, phone, tablet and PC. Instant setup,
-          no contract.
+          no contract, and a free trial so you can{' '}
+          <a href="/iptv-free-trial/">test IPTV before you pay</a>.
         </p>
 
         <p className={styles.offer}>

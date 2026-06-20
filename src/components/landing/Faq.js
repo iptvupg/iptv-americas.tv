@@ -40,6 +40,26 @@ const ITEMS = [
     q: 'Can I cancel my subscription?',
     a: 'Yes, you can cancel at any time. Because plans are billed once with no auto-renewal, your subscription simply ends when its term is over unless you choose to renew.',
   },
+  {
+    q: 'Do you offer a free IPTV trial?',
+    a: (
+      <>
+        Yes. You can <a href="/iptv-free-trial/">start a free 24-hour trial</a> with full
+        access to the channel and movie library before you pay. No card is required — just
+        message us to begin.
+      </>
+    ),
+  },
+  {
+    q: 'How much does an IPTV subscription cost?',
+    a: (
+      <>
+        Plans start at $16 for one month and drop to as low as $7.50 per month on the
+        12-month plan. <a href="/pricing/">Compare IPTV plans</a> to see what each term
+        includes — every plan is billed once with no auto-renewal.
+      </>
+    ),
+  },
 ];
 
 export default function Faq() {

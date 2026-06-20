@@ -70,10 +70,10 @@ const STRUCTURED_DATA = {
       description:
         '54,000+ live TV channels and 120,000+ movies & series in 4K, with live sports coverage, EPG, catch-up and 24/7 support. Works on Smart TV, Firestick, phone, tablet and PC.',
       offers: [
-        { '@type': 'Offer', name: '1 Month', price: '16', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: `${SITE_URL}/#pricing` },
-        { '@type': 'Offer', name: '3 Months', price: '39', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: `${SITE_URL}/#pricing` },
-        { '@type': 'Offer', name: '6 Months', price: '60', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: `${SITE_URL}/#pricing` },
-        { '@type': 'Offer', name: '12 Months', price: '90', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: `${SITE_URL}/#pricing` },
+        { '@type': 'Offer', name: '1 Month', price: '16', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: `${SITE_URL}/pricing/` },
+        { '@type': 'Offer', name: '3 Months', price: '39', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: `${SITE_URL}/pricing/` },
+        { '@type': 'Offer', name: '6 Months', price: '60', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: `${SITE_URL}/pricing/` },
+        { '@type': 'Offer', name: '12 Months', price: '90', priceCurrency: 'USD', availability: 'https://schema.org/InStock', url: `${SITE_URL}/pricing/` },
       ],
     },
     {
@@ -152,6 +152,22 @@ const STRUCTURED_DATA = {
             text: 'Yes, you can cancel at any time. Because plans are billed once with no auto-renewal, your subscription simply ends when its term is over unless you choose to renew.',
           },
         },
+        {
+          '@type': 'Question',
+          name: 'Do you offer a free IPTV trial?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. You can start a free 24-hour trial with full access to the channel and movie library before you pay. No card is required — just message us to begin.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How much does an IPTV subscription cost?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Plans start at $16 for one month and drop to as low as $7.50 per month on the 12-month plan. Every term includes the full channel and movie library, billed once with no auto-renewal.',
+          },
+        },
       ],
     },
   ],
@@ -160,12 +176,13 @@ const STRUCTURED_DATA = {
 export default function Home() {
   return (
     <Layout
-      title="Best IPTV Service in USA, Canada & Latin America"
-      description="Watch live TV, sports & movies in HD & 4K on any device. 54,000+ channels, instant activation, no contract — get your IPTV plan today, risk-free for 30 days."
+      title="Best IPTV Service 2026 | USA, Canada & Latin America"
+      description="IPTV service with 54,000+ live channels & 120,000+ movies in HD & 4K on any device. Instant setup, no contract, 30-day money-back guarantee."
       noFooter
       wrapperClassName="landing-main"
     >
       <Head>
+        <title>Best IPTV Service 2026 | USA, Canada &amp; Latin America</title>
         <script type="application/ld+json">
           {JSON.stringify(STRUCTURED_DATA)}
         </script>

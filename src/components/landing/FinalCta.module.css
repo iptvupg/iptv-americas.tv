@@ -48,6 +48,12 @@
   }
 }
 
+.trialNote {
+  margin: var(--vt-space-5) 0 0;
+  font-size: var(--vt-fs-sm);
+  color: var(--vt-text-muted);
+}
+
 .points {
   display: flex;
   flex-wrap: wrap;

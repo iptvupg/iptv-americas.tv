@@ -98,7 +98,7 @@ const STRUCTURED_DATA = {
       '@type': 'WebPage',
       '@id': `${PAGE_URL}#webpage`,
       url: PAGE_URL,
-      name: 'IPTV Free Trial — 24-Hour Full Access, No Card',
+      name: 'IPTV Free Trial — 24 Hours, No Card Needed',
       description:
         'Try IPTV free for 24 hours — full access to 54,000+ live channels and 120,000+ on-demand titles in true 4K. No form, no card, no commitment.',
       inLanguage: 'en',
@@ -121,12 +121,13 @@ const STRUCTURED_DATA = {
 export default function IptvFreeTrial() {
   return (
     <Layout
-      title="IPTV Free Trial — 24-Hour Full Access, No Card"
+      title="IPTV Free Trial — 24 Hours, No Card Needed"
       description="Try IPTV free for 24 hours — full access to 54,000+ live channels and 120,000+ on-demand titles in true 4K. No form, no card, no commitment. One WhatsApp message starts it."
       noFooter
       wrapperClassName="landing-main"
     >
       <Head>
+        <link rel="canonical" href={PAGE_URL} />
         <script type="application/ld+json">{JSON.stringify(STRUCTURED_DATA)}</script>
       </Head>
       <CheckoutProvider>
@@ -154,8 +155,8 @@ export default function IptvFreeTrial() {
                 >
                   <IconWhatsapp width={20} height={20} /> Start my free trial
                 </a>
-                <a className="vt-btn vt-btn-ghost vt-btn-lg" href="/#pricing">
-                  View plans <IconArrow width={17} height={17} />
+                <a className="vt-btn vt-btn-ghost vt-btn-lg" href="/pricing/">
+                  Compare plans <IconArrow width={17} height={17} />
                 </a>
               </div>
 
@@ -247,6 +248,7 @@ export default function IptvFreeTrial() {
               <h2 className={styles.ctaTitle}>Ready to test it for free?</h2>
               <p className={styles.ctaSub}>
                 One message on WhatsApp and your 24-hour trial begins — no card, no risk.
+                Prefer to skip the trial? <a href="/pricing/">Compare IPTV plans</a> instead.
               </p>
               <a
                 className="vt-btn vt-btn-primary vt-btn-lg"
