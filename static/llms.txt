@@ -6,16 +6,16 @@ IPTV Americas is a subscription IPTV provider. Plans are billed once with no aut
 
 ## Pricing
 
-- [1 Month](https://www.iptv-americas.tv/#pricing): $16
-- [3 Months](https://www.iptv-americas.tv/#pricing): $39
-- [6 Months](https://www.iptv-americas.tv/#pricing): $60
-- [12 Months](https://www.iptv-americas.tv/#pricing): $90 (best value)
+- [1 Month](https://www.iptv-americas.tv/pricing/): $16
+- [3 Months](https://www.iptv-americas.tv/pricing/): $39
+- [6 Months](https://www.iptv-americas.tv/pricing/): $60
+- [12 Months](https://www.iptv-americas.tv/pricing/): $90 (best value)
 
 ## Key pages
 
 - [Home](https://www.iptv-americas.tv/): Overview, pricing, features, supported devices, setup guide and FAQ
-- [Pricing](https://www.iptv-americas.tv/#pricing): Subscription plans and what every plan includes
-- [How It Works](https://www.iptv-americas.tv/#install): Setup steps after purchase
+- [Pricing](https://www.iptv-americas.tv/pricing/): Subscription plans and what every plan includes
+- [How It Works](https://www.iptv-americas.tv/#how-it-works): Setup steps after purchase
 - [FAQ](https://www.iptv-americas.tv/#faq): Configuration, playlist customization, traveling abroad, and cancellation
 
 ## Legal

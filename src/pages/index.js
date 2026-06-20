@@ -4,6 +4,7 @@ import Head from '@docusaurus/Head';
 
 import Navbar from '@site/src/components/landing/Navbar';
 import Hero from '@site/src/components/landing/Hero';
+import HomeExperience from '@site/src/components/landing/HomeExperience';
 import HowItWorks from '@site/src/components/landing/HowItWorks';
 import Devices from '@site/src/components/landing/Devices';
 import Pricing from '@site/src/components/landing/Pricing';
@@ -192,6 +193,7 @@ export default function Home() {
         <Reveal />
         <main>
           <Hero />
+          <HomeExperience />
           <Pricing />
           <Stats />
           <Devices />

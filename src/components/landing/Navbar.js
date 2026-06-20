@@ -6,7 +6,7 @@ import styles from './Navbar.module.css';
 
 const LINKS = [
   { label: 'Home', href: '/#home' },
-  { label: 'Pricing', href: '/#pricing' },
+  { label: 'Pricing', href: '/pricing/' },
   { label: 'Features', href: '/#features' },
   { label: 'Devices', href: '/#devices' },
   { label: 'How It Works', href: '/#how-it-works' },

@@ -41,18 +41,6 @@ const config = {
         content: 'ujlGhSq48aL0_mUmSmr-reYx24eYgBTeBmcyhMFt0gU',
       },
     },
-    {
-      tagName: 'link',
-      attributes: { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-    },
-    {
-      tagName: 'link',
-      attributes: { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
-    },
-  ],
-
-  stylesheets: [
-    'https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap',
   ],
 
   // Even if you don't use internationalization, you can use this field to set

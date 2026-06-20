@@ -11,7 +11,15 @@ export default function WhatIsIptv() {
         </header>
 
         <p className={styles.answer} data-reveal>
-          IPTV (Internet Protocol Television) delivers live TV channels and on-demand
+          IPTV (
+          <a
+            href="https://en.wikipedia.org/wiki/Internet_Protocol_television"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Internet Protocol Television
+          </a>
+          ) delivers live TV channels and on-demand
           movies and series over a standard internet connection instead of a cable line
           or satellite dish. Rather than broadcasting one fixed signal to everyone, IPTV
           streams each program to your device on request, so you can watch live channels,
