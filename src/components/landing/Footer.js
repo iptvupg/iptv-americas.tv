@@ -45,10 +45,10 @@ export default function Footer() {
           <a className={styles.logo} href="/" aria-label="IPTV Americas home">
             <img
               className={styles.logoImg}
-              src="/img/IPTV-Americas-logo.png"
+              src="/img/IPTV-Americas-logo-nav.png"
               alt="IPTV Americas"
-              width={942}
-              height={265}
+              width={426}
+              height={120}
             />
           </a>
           <p className={styles.tagline}>

@@ -100,10 +100,6 @@ const config = {
       // the theme navbar/footer are left empty to avoid duplicate chrome.
       navbar: {
         title: '',
-        logo: {
-          alt: 'IPTV Americas',
-          src: 'img/logo.svg',
-        },
         items: [],
       },
       footer: undefined,
